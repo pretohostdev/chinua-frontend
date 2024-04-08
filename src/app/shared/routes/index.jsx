@@ -27,7 +27,29 @@ export const router = createBrowserRouter([
       }, {
         path: '/partner',
         element: <Partener />
-      }
+      },
+      {
+        path: 'chinua',
+        element: <div><h1>CHINUA DEMBO SERVICOS</h1></div>,
+        children: [
+          {
+            path: 'constroi', 
+            element: <div> <h1>Chinua Controi</h1> </div>
+          },
+          {
+            path: 'taxi', 
+            element: <div> <h1>Chinua Taxi</h1> </div>
+          },
+          {
+            path: 'repair', 
+            element: <div> <h1>Chinua Repair</h1> </div>
+          },
+          {
+            path: 'auto-parts', 
+            element: <div> <h1>Chinua Repair</h1> </div>
+          },
+        ]
+      },
     ]
   }
 ])

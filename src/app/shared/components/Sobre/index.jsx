@@ -1,6 +1,6 @@
 
 import { Container } from './styles';
-
+import Logo from "../../../../assets/img/logo_oficial.png"
 
 
 export const Sobre = () => {
@@ -9,7 +9,7 @@ export const Sobre = () => {
       <div className="top">
         <div className="container">
           <div className="element primario">
-            <div className="element-bottom">
+           {/* <div className="element-bottom">
               <h5 className="title">
                 Intermediações
               </h5>
@@ -18,13 +18,20 @@ export const Sobre = () => {
                 <span> <span className="dot">.</span> Negócio</span>
                 <span> <span className="dot">.</span> Automóveis</span>
               </span>
-            </div>
+            </div>*/}
             <div className="element-second">
               <h2 className='element-second-title'>
                 Quem somos:
               </h2>
-              <p>
-                Somos a <span className="empresa">Chinua Ndembo</span>, empresa de prestação de serviços, voltada para o sector de intermediação de negócios, fundada em 2021, com a sede em Viana -  Luanda Sul, Desde o início, nossa empresa tem se dedicado a conectar compradores e vendedores, tornando-se facilmente bem-sucedidas em diversos sectores.
+              <p  style={{color:"#121212"}}>
+                Somos a <span  style={{color:"#121212"}} className="empresa">Chinua Ndembo</span>,
+empresa de 
+prestadora de serviços, voltada para o setor de 
+intermediação diversas, fundada em 2021, 
+com o objetivo de facilitar o processo de 
+compra e venda de bens e serviços, 
+proporcionando segurança e eficiência para 
+todas as partes envolvidas.
               </p>
             </div>
           </div>
@@ -32,9 +39,13 @@ export const Sobre = () => {
         </div>
       </div>
       <div className="bottom">
-        <div className="container">
-
-
+        <div className="container-flex">
+          <div>
+            <div  className='logo'>
+              <img     src={Logo} />
+            </div>
+          </div>
+          <div  className='container'>
           <div className="element primario">
             <div className="element-bottom">
             </div>
@@ -47,6 +58,20 @@ export const Sobre = () => {
               </p>
             </div>
           </div>
+          <div className="element primario">
+            <div className="element-bottom">
+            </div>
+            <div className="element-second">
+              <h2 className='element-second-title'>
+                Visao:
+              </h2>
+              <p>
+                Nossa missão é facilitar negócios bem-sucedidos, conectando compradores e vendedores, com eficiência e eficácia. Estamos comprometidos em fornecer soluções personalizadas, aprimorando nossa expertise e tecnologia, para nos tornamos um parceiro confiável para nossos clientes.
+              </p>
+            </div>
+          </div>
+          </div>
+          
 
         </div>
       </div>

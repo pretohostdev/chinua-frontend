@@ -27,6 +27,37 @@ export const Container = styled.div`
      }
    }
 
+.container-flex{
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: #121212;
+   padding: 0px 80px;
+   @media screen and (max-width: 760px){
+         flex-flow: column;
+         column-gap: 0rem;
+      }
+}
+
+.logo{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.logo img{
+   width: 500px;
+   height: 500px;
+   @media screen and (max-width: 760px){
+         margin-top: 20px;
+         width: 350px;
+         height: 350px;
+      }
+}
+.element .primario{
+   color: #fff;
+}
 
 
    .container .element{
@@ -76,6 +107,7 @@ export const Container = styled.div`
          display: flex;
          flex-direction: column;
          padding: 1rem 0;
+       
          @media screen and (max-width: 760px){
             width: 100%;
          }
@@ -87,9 +119,11 @@ export const Container = styled.div`
             font-weight: normal;
          }
          p{
+            color: #fff;
             line-height: 1.6;
             font-size: 1.2rem;
             text-align: justify;
+            font-weight: 200;
          
             .empresa{
                font-weight: bolder;

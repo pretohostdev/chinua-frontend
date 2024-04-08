@@ -40,6 +40,11 @@ export const Home = () => {
       </Container>
     </Fade>
     <Fade direction="left">
+      <Container>
+        <Sobre />
+      </Container>
+    </Fade>
+    <Fade direction="left">
 
       <Container back="true">
         <div className="container">
@@ -47,16 +52,13 @@ export const Home = () => {
         </div>
       </Container>
     </Fade>
+    
     <Container>
       <div className="container">
         <Services />
       </div>
     </Container>
-    <Fade direction="left">
-      <Container>
-        <Sobre />
-      </Container>
-    </Fade>
+    
     <Fade cascade>
       <Container>
         <Galeria />
