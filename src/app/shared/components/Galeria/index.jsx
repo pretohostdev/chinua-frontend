@@ -4,18 +4,18 @@ import Seat from '../../../../assets/img/seat.jpg'
 import Room from '../../../../assets/img/slide001.jpg'
 import Room_1 from '../../../../assets/img/slide002.jpg'
 import Room_3 from '../../../../assets/img/slide003.jpg'
-import Home from '../../../../assets/img/home.jpg'
-import Galeria1 from '../../../../assets/img/galeria (1).jpg'
-import Galeria2 from '../../../../assets/img/galeria (2).jpg'
-import Galeria3 from '../../../../assets/img/galeria (3).jpg'
-import Galeria4 from '../../../../assets/img/galeria (4).jpg'
-import Galeria5 from '../../../../assets/img/galeria (5).jpg'
-import Galeria6 from '../../../../assets/img/galeria (6).jpg'
-import Galeria7 from '../../../../assets/img/galeria (7).jpg'
-import Galeria8 from '../../../../assets/img/galeria (8).jpg'
-import Galeria9 from '../../../../assets/img/galeria (9).jpg'
-import Galeria10 from '../../../../assets/img/galeria (10).jpg'
-import Galeria11 from '../../../../assets/img/galeria (11).jpg'
+import HomeJPG from '../../../../assets/img/home.jpg'
+import Galeria1 from '../../../../assets/img/galeria1.jpg'
+import Galeria2 from '../../../../assets/img/galeria2.jpg'
+import Galeria3 from '../../../../assets/img/galeria3.jpg'
+import Galeria4 from '../../../../assets/img/galeria4.jpg'
+import Galeria5 from '../../../../assets/img/galeria5.jpg'
+import Galeria6 from '../../../../assets/img/galeria6.jpg'
+import Galeria7 from '../../../../assets/img/galeria7.jpg'
+import Galeria8 from '../../../../assets/img/galeria8.jpg'
+import Galeria9 from '../../../../assets/img/galeria9.jpg'
+import Galeria10 from '../../../../assets/img/galeria10.jpg'
+import Galeria11 from '../../../../assets/img/galeria11.jpg'
 
 
 
@@ -96,7 +96,7 @@ function Galeria() {
             alt: 'Room 3'
         },
         {
-            src: Home,
+            src: HomeJPG,
             alt: 'Home'
         },
         {
