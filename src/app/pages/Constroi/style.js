@@ -39,7 +39,7 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 h1{
-    font-size: 80px;
+    font-size: 60px;
 }
 
 
@@ -49,7 +49,6 @@ width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-
 
 `;
 export const ContainerInfo=styled.div`
@@ -74,3 +73,42 @@ p{
 }
 
 `
+
+
+
+export const Background = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://images.unsplash.com/photo-1551295022-de5522c94e08?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  position: relative;
+  width: 100%; 
+  height: 500px; 
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajuste a transparência conforme necessário */
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+`;
+
+export const ContentBackground = styled.div`
+  position: relative;
+  z-index: 1;
+`;

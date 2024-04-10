@@ -1,33 +1,59 @@
 import { Container,Content,Logo,
     PageContainer,Welcome,ContentInfo,ContainerInfo,
-    TitleServicos,Section
+    TitleServicos,Section,Background,ContentBackground
 
 } from "./style"
 import LogoConstroi from "../../../assets/img/constroi.png"
 import { Fade } from "react-awesome-reveal"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding, faHardHat, faHouseUser } from '@fortawesome/free-solid-svg-icons';
+import { Gallery } from "./Gallery";
 
 
 export const Constroi=()=>{
+
+    const projects = [
+        {
+          name: 'Projeto 1',
+          description: 'Descrição do Projeto 1',
+          image: 'https://images.unsplash.com/photo-1593786267440-550458cc882a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        },
+        {
+          name: 'Projeto 2',
+          description: 'Descrição do Projeto 2',
+          image: 'https://plus.unsplash.com/premium_photo-1681823643449-3c3d99541b0b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        },
+        {
+            name: 'Projeto 3',
+            description: 'Descrição do Projeto 3',
+            image: 'https://images.unsplash.com/photo-1605146769289-440113cc3d00?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        },
+        {
+            name: 'Projeto 4',
+            description: 'Descrição do Projeto 4',
+            image: 'https://plus.unsplash.com/premium_photo-1681823643449-3c3d99541b0b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        },
+        {
+            name: 'Projeto 5',
+            description: 'Descrição do Projeto 5',
+            image: 'https://images.unsplash.com/photo-1551295022-de5522c94e08?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        },
+        {
+            name: 'Projeto 6',
+            description: 'Descrição do Projeto 6',
+            image: 'https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        },
+      ]
 
     return(
         <>
         <Container>
         <Fade>
-            <div style={{
-
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fundo quase escuro
-                color: 'white', 
-                padding: '20px',
-               }}>
+            <Background>
 
                 <div style={{width:"100%"}} >
                     <Welcome>
-                    <h1 style={{ textAlign: 'center' }}>Bem-vindo à Controi</h1>
+                    <h1 style={{ textAlign: 'center' }}>Bem-vindo à Chinua Controi</h1>
                     <p style={{ textAlign: 'center' }}>Construindo seus sonhos com qualidade e eficiência.</p>
                     </Welcome>
                 <ContentInfo>
@@ -38,14 +64,14 @@ export const Constroi=()=>{
                 </ContentInfo>
             
                 </div>
-        </div>
+        </Background>
         </Fade>
         <PageContainer>
-                <Content>
-                   <TitleServicos>
-                   <h1>Serviços</h1>
-                   </TitleServicos>
-                    <div style={{
+        <Content>
+            <TitleServicos>
+            <h1>Serviços</h1>
+            </TitleServicos>
+            <div style={{
             display: 'flex',
             justifyContent: 'space-around', 
             flexWrap: 'wrap', 
@@ -67,9 +93,10 @@ export const Constroi=()=>{
                 <p>Asseguramos o convívio harmonioso entre os residentes e promovemos uma vida confortável no seu condomínio. Fazemos o melhor para se preocupar o menos possível.</p>
             </Section>
         </div>
+        <Gallery projects={projects} />
                 </Content>
               
-            </PageContainer>
+        </PageContainer>
         </Container>
         </>
     )
