@@ -1,13 +1,13 @@
 import { Container,Content,Logo,
     PageContainer,Welcome,ContentInfo,ContainerInfo,
-    TitleServicos,Section,Background,ContentBackground
+    TitleServicos,Section,Background,ContentBackground,ContinaerContacto
 
 } from "./style"
-import LogoConstroi from "../../../assets/img/constroi.png"
 import { Fade } from "react-awesome-reveal"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding, faHardHat, faHouseUser } from '@fortawesome/free-solid-svg-icons';
 import { Gallery } from "./Gallery";
+import Contacto from "../../shared/components/Contacto";
 
 
 export const Constroi=()=>{
@@ -94,7 +94,12 @@ export const Constroi=()=>{
             </Section>
         </div>
         <Gallery projects={projects} />
-                </Content>
+      
+
+      <ContinaerContacto>
+      <Contacto/>
+      </ContinaerContacto>
+        </Content>
               
         </PageContainer>
         </Container>

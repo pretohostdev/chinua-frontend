@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 100%;
     height: auto;
-    background: #FFF;
+    background: #ededed;
     display: flex; 
     justify-content: center;
     position: relative;
@@ -112,3 +112,16 @@ export const ContentBackground = styled.div`
   position: relative;
   z-index: 1;
 `;
+
+
+export const ContinaerContacto=styled.div`
+width: 100%;
+padding: 0px 20px;
+
+height: auto;
+margin-bottom: 25px;
+
+
+background: rgba(37, 43, 54, 0.95);
+
+`
