@@ -4,7 +4,9 @@ import { GlobalStyle } from "../styles/globalStyle";
 import { NavBar } from "../components/NavBar";
 import dark from "../styles/theme/dark";
 import { Partener } from "../../pages/Partener";
-
+import FooterContainer from "../components/FooterContainer";
+import { Footer } from "../../pages/Home/styles";
+import { Constroi } from "../../pages/Constroi";
 
 const App = () => {
   return (
@@ -12,6 +14,9 @@ const App = () => {
       <GlobalStyle theme={dark} />
       <NavBar />
       <Outlet />
+      <Footer>
+      <FooterContainer/>
+      </Footer>
     </>
   )
 }
@@ -27,29 +32,30 @@ export const router = createBrowserRouter([
       }, {
         path: '/partner',
         element: <Partener />
+      }
+    ],
+    
+  },
+  {
+    path: '/chinua',
+    element:<App/>,
+    children: [
+      {
+        path: 'constroi', 
+        element: <Constroi/>
       },
       {
-        path: 'chinua',
-        element: <div><h1>CHINUA DEMBO SERVICOS</h1></div>,
-        children: [
-          {
-            path: 'constroi', 
-            element: <div> <h1>Chinua Controi</h1> </div>
-          },
-          {
-            path: 'taxi', 
-            element: <div> <h1>Chinua Taxi</h1> </div>
-          },
-          {
-            path: 'repair', 
-            element: <div> <h1>Chinua Repair</h1> </div>
-          },
-          {
-            path: 'auto-parts', 
-            element: <div> <h1>Chinua Repair</h1> </div>
-          },
-        ]
+        path: 'taxi', 
+        element: <div> <h1>Chinua Taxi</h1> </div>
+      },
+      {
+        path: 'repair', 
+        element: <div> <h1>Chinua Repair</h1> </div>
+      },
+      {
+        path: 'auto-parts', 
+        element: <div> <h1>Chinua Repair</h1> </div>
       },
     ]
-  }
+  },
 ])

@@ -70,8 +70,6 @@ export const Home = () => {
       </div>
     </Container>
 
-    <Footer>
-      <FooterContainer />
-    </Footer>
+    
   </>
 }
