@@ -6,7 +6,7 @@ import { NavItemC } from './NavC/NavItemC';
 import { Button } from '../Button';
 import { ProdutosContainer } from './ProdutosContainer';
 
-import carros from '../../../../assets/img/home.jpg'
+import carros from '../../../../assets/img/casa.jpg'
 import { ItemProducto } from './ItemProducto';
 import styled from 'styled-components';
 import dark from '../../styles/theme/dark';
