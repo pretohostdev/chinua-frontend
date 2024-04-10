@@ -98,8 +98,7 @@ export const Background = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Ajuste a transparência conforme necessário */
-    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
   }
 
   > * {
