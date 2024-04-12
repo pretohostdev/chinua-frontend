@@ -38,10 +38,12 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-h1{
-    font-size: 60px;
+h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
 }
-
+  p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
 
 `
 export const ContentInfo=styled.div`

@@ -7,6 +7,9 @@ import { Partener } from "../../pages/Partener";
 import FooterContainer from "../components/FooterContainer";
 import { Footer } from "../../pages/Home/styles";
 import { Constroi } from "../../pages/Constroi";
+import { Taxi } from "../../pages/Taxi";
+import { Repair } from "../../pages/Repair";
+import { AutoParts } from "../../pages/AutoParts";
 
 const App = () => {
   return (
@@ -46,15 +49,15 @@ export const router = createBrowserRouter([
       },
       {
         path: 'taxi', 
-        element: <div> <h1>Chinua Taxi</h1> </div>
+        element: <Taxi/>
       },
       {
         path: 'repair', 
-        element: <div> <h1>Chinua Repair</h1> </div>
+        element: <Repair/>
       },
       {
         path: 'auto-parts', 
-        element: <div> <h1>Chinua Repair</h1> </div>
+        element: <AutoParts/>
       },
     ]
   },
