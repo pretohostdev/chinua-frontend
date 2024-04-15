@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWrench, faPaintRoller, faCarCrash } from '@fortawesome/free-solid-svg-icons';
 import Contacto from "../../shared/components/Contacto";
 import { NavBar } from '../../shared/components/NavBar';
-import { Logos } from '../../shared/constants/logos';
+import { Logos ,Videos} from '../../shared/constants/logos';
 
 
 const cars = [
@@ -51,6 +51,16 @@ export const AutoParts = () => {
             <Container>
                 <Fade>
                     <Background>
+
+                    <video style={{
+              position: "absolute",
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }} autoPlay muted loop>
+              <source src={Videos.video_AutoParts} type="video/mp4" />
+
+            </video>
                         <div style={{ width: "100%" }}>
                             <Welcome>
                                 <h1 style={{ textAlign: 'center', }}>Bem-vindo à Chinua Auto Parts</h1>
