@@ -1,6 +1,6 @@
 
 import styled from "styled-components";
-
+import VideoMecanica from "../../../assets/video/mecanica_01.mp4"
 
 export const Container = styled.div`
     width: 100%;
@@ -87,7 +87,7 @@ export const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("https://images.unsplash.com/photo-1469365556835-3da3db4c253b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center;
+  background: url(${VideoMecanica}) no-repeat center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.5);
@@ -96,6 +96,8 @@ export const Background = styled.div`
   position: relative;
   width: 100%; 
   height: 500px; 
+
+
 
 
   &::before {
@@ -185,6 +187,7 @@ export const WorkCard = styled.div`
     height: auto;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    margin-bottom: 20px;
   }
   p {
     padding: 8px;

@@ -10,6 +10,7 @@ import FooterContainer from "../../shared/components/FooterContainer"
 import Galeria from "../../shared/components/Galeria"
 
 import { Fade } from "react-awesome-reveal"
+import { NavBar } from "../../shared/components/NavBar"
 
 
 
@@ -29,6 +30,7 @@ const StyleHome = styled.div`
 
 export const Home = () => {
   return <>
+  <NavBar />
     <Fade  >
       <Container first="true">
         <div className="container">

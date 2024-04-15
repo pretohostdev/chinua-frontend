@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding, faHardHat, faHouseUser } from '@fortawesome/free-solid-svg-icons';
 import { Gallery } from "./Gallery";
 import Contacto from "../../shared/components/Contacto";
+import { NavBar } from "../../shared/components/NavBar";
+import { Logos } from "../../shared/constants/logos";
 
 
 export const Constroi=()=>{
@@ -47,6 +49,7 @@ export const Constroi=()=>{
 
     return(
         <>
+        <NavBar  urlLogo={Logos.logo_Constroi} />
         <Container>
         <Fade>
             <Background>

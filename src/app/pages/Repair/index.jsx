@@ -7,9 +7,12 @@ import { Container,Content,
 import { Fade } from "react-awesome-reveal"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTools, faProjectDiagram, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import VideoMecanica from "../../../assets/video/mecanica_01.mp4"
 
 import Contacto from "../../shared/components/Contacto";
 import Modal from './Modal';
+import { NavBar } from '../../shared/components/NavBar';
+import { Logos } from '../../shared/constants/logos';
 
 
 export const Repair=()=>{
@@ -58,9 +61,19 @@ export const Repair=()=>{
 
     return(
         <>
+        <NavBar  urlLogo={Logos.logo_Repair} />
         <Container>
         <Fade>
             <Background>
+            <video style={{
+              position:"absolute",
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover'
+  }} autoPlay muted loop>
+    <source src={VideoMecanica} type="video/mp4" />
+   
+  </video>
 
                 <div style={{width:"100%"}} >
                     <Welcome>

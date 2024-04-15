@@ -15,7 +15,6 @@ const App = () => {
   return (
     <>
       <GlobalStyle theme={dark} />
-      <NavBar />
       <Outlet />
       <Footer>
       <FooterContainer/>

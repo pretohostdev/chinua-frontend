@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTaxi, faMapMarkedAlt, faClock } from '@fortawesome/free-solid-svg-icons';
 
 import Contacto from "../../shared/components/Contacto";
+import { NavBar } from "../../shared/components/NavBar";
+import { Logos } from "../../shared/constants/logos";
 
 
 export const Taxi = () => {
@@ -16,7 +18,7 @@ export const Taxi = () => {
 
     return (
         <>
-
+        <NavBar urlLogo={Logos.logo_Taxi}  />
             <Container>
                 <Fade>
                     <Background>

@@ -13,6 +13,8 @@ import { Fade ,Slide } from "react-awesome-reveal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWrench, faPaintRoller, faCarCrash } from '@fortawesome/free-solid-svg-icons';
 import Contacto from "../../shared/components/Contacto";
+import { NavBar } from '../../shared/components/NavBar';
+import { Logos } from '../../shared/constants/logos';
 
 
 const cars = [
@@ -45,6 +47,7 @@ const services = [
 export const AutoParts = () => {
     return (
         <>
+        <NavBar urlLogo={Logos.logo_AutoParts}  />
             <Container>
                 <Fade>
                     <Background>

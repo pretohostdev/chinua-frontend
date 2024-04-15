@@ -34,7 +34,7 @@ const Humburger = styled.div`
             }
        } `;
 
-export const NavBar = () => {
+export const NavBar = ({urlLogo}) => {
 
     const [nav, setNav] =  useState('') 
     const [toggle, setToggle] =  useState('') 
@@ -47,7 +47,7 @@ export const NavBar = () => {
      return (
         <Container>
             <div className="container">
-                <Logo />
+                <Logo urlLogo={urlLogo} />
                 <Nav propClass={nav} />
                 <Humburger onClick={navToggle} className={toggle}>
                         <div className="line1"></div>
