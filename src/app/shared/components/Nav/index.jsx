@@ -16,7 +16,7 @@ export const Nav=(props)=> {
           <Link>Escritório</Link>
         </ListItem> 
         <ListItem>
-        <a href="#about">Sobre</a>
+        <a href="#about" >Sobre</a>
         </ListItem> 
         
         <ListItem>

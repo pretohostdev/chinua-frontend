@@ -11,6 +11,7 @@ import Galeria from "../../shared/components/Galeria"
 
 import { Fade } from "react-awesome-reveal"
 import { NavBar } from "../../shared/components/NavBar"
+import { Partener } from "../Partener"
 
 
 
@@ -66,6 +67,12 @@ export const Home = () => {
         <Galeria />
       </Container>
     </Fade>
+
+
+    <Fade cascade>
+        <Partener/>
+    </Fade>
+
     <Container>
       <div className="container">
         <Contacto />
