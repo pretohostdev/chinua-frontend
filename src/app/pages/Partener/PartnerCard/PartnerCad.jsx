@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Fade } from 'react-awesome-reveal';
 const Card = styled.div`
+
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,20 +13,27 @@ const Card = styled.div`
     margin: 10px;
     border-radius:10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-bottom: 20PX;
 
 
 
   img{
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
+    width: 100%;
+    height: 320px;
+    border-radius: 20px;
     margin-top: 15px;
     margin-bottom: 15px;
+    image-orientation: flip;
+    object-fit: fill;
+    
   }
 
   h2{
     color: #fff;
-    font-weight:200;
+    font-weight:400;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 10px;
   }
 `;
 

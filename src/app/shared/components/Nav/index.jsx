@@ -2,6 +2,18 @@
 // import { Container } from './styles';
 
 import { Link } from "react-router-dom";
+import { Link as LinkA, animateScroll as scroll } from "react-scroll";
+
+<Link
+  activeClass="active"
+  to="about"
+  spy={true}
+  smooth={true}
+  offset={-70}
+  duration={500}
+>
+  Sobre
+</Link>
 import { ListItem } from "../ListItem";
 import { Container } from "./styles";
 
@@ -9,21 +21,33 @@ export const Nav=(props)=> {
   return (
     <Container className={props.propClass}>
         <ListItem>
-          <Link>Ínicio</Link>
+          <Link to={"/"}>Ínicio</Link>
         </ListItem> 
         
         <ListItem>
           <Link>Escritório</Link>
         </ListItem> 
         <ListItem>
-        <a href="#about" >Sobre</a>
+        <LinkA
+  activeClass="active"
+  to="about"
+  spy={true}
+  smooth={true}
+  offset={-70}
+  duration={500}
+>
+  Sobre
+</LinkA>
         </ListItem> 
         
         <ListItem>
-          <Link>O que falam</Link>
+          <a href="#oquefalam">O que falam</a>
         </ListItem> 
         <ListItem>
-          <Link to="/partner">Parceiro</Link>
+          <Link target="#Parceiro" to="/" children>
+            <a   href="#Parceiro">Parceiro</a>
+          </Link>
+       
         </ListItem> 
         <ListItem>
           <a href="#contact">Contacto</a>

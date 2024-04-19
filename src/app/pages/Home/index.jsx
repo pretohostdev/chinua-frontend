@@ -13,7 +13,8 @@ import { Fade } from "react-awesome-reveal"
 import { NavBar } from "../../shared/components/NavBar"
 import { Partener } from "../Partener"
 
-
+import { Link, animateScroll as scroll } from "react-scroll";
+import { CompanyList } from "../../shared/components/CompanyCard/CompanyCard"
 
 const StyleHome = styled.div`
   width: 100%;
@@ -40,6 +41,12 @@ export const Home = () => {
             <CiteContainer />
           </StyleHome>
         </div>
+      </Container>
+    </Fade>
+
+    <Fade direction="top-left">
+      <Container>
+          <CompanyList/>
       </Container>
     </Fade>
     <Fade direction="left">
@@ -69,9 +76,17 @@ export const Home = () => {
     </Fade>
 
 
+
+  
+
+<scroll>
+
     <Fade cascade>
+      <Container  id="Parceiro" >
         <Partener/>
+      </Container>
     </Fade>
+</scroll>
 
     <Container>
       <div className="container">
