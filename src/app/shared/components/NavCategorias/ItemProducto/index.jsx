@@ -11,7 +11,7 @@ export const ItemProducto = (props) => {
             <img src={props.src} alt={props.alt} rel="noprefered" />
             <span className='title-product'>{props.title}  <span className='product-year'>{props.year}</span></span>
             <span className="details">{props.velocity}<span className="velocity"> / {props.price}</span></span>
-            <Link to="/">
+            <Link to={`/produto/detalhes/${2}`}>
                 <Button theme="secondary">Ver tudo</Button>
             </Link>
         </Container>

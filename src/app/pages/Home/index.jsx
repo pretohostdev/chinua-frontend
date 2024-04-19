@@ -55,8 +55,7 @@ export const Home = () => {
       </Container>
     </Fade>
     <Fade direction="left">
-
-      <Container back="true">
+      <Container >
         <div className="container">
           <NavCategorias />
         </div>

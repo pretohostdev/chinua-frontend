@@ -10,6 +10,7 @@ import { Constroi } from "../../pages/Constroi";
 import { Taxi } from "../../pages/Taxi";
 import { Repair } from "../../pages/Repair";
 import { AutoParts } from "../../pages/AutoParts";
+import ProductDetails from "../../pages/Produto";
 
 const App = () => {
   return (
@@ -60,4 +61,15 @@ export const router = createBrowserRouter([
       },
     ]
   },
+  {
+    path:"/produto",
+    element:<App/>,
+    errorElement:<div> <h2>Pagina de produtos nao encontrado</h2> </div>,
+    children:[
+     { path:"detalhes/:IDproduto",
+     element:<ProductDetails/>
+      }
+    ]
+
+  }
 ])
