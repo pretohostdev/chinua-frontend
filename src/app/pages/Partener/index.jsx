@@ -6,6 +6,7 @@ import LogoBNPTECH from "../../../assets/parceiros/logo_bnp_tech.jpg"
 import LogoGDX from "../../../assets/parceiros/logo_grupo_gdx.jpg"
 import LogoBADM from "../../../assets/parceiros/logo_badm.jpg"
 import LogoBBDEV from "../../../assets/parceiros/logo_b_b_dev.jpg"
+import TATIFA from "../../../assets/parceiros/logo_latifa_lda.jpg"
 
 import PartnerCard from './PartnerCard/PartnerCad';
 import { ContainerListPartner } from './styles';
@@ -18,6 +19,7 @@ export const Partener = () => {
     { name: 'BNT TECH Oil And Gas Services', image: LogoBNPTECH,link:"#" },
     { name: 'BADM', image: LogoBADM,link:"#" },
     { name: 'B.B.DEV', image: LogoBBDEV,link:"#" },
+    { name: 'LATIFA LDA', image: TATIFA,link:"#" },
 
   ];
 
