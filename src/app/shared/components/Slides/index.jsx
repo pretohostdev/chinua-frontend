@@ -7,6 +7,7 @@ import Slide003 from './../../../../assets/img/slide003.jpg'
 import { Controller } from "../Controller"
 import styled from "styled-components"
 import dark from "../../styles/theme/dark"
+import Carousel from "react-multi-carousel"
 
 
 const ControllerStyle = styled.div`
@@ -106,18 +107,20 @@ export const Slides = () => {
     // }
 
     return (
-
         <Container>
-
             <SlidesContent slides={slides} id="slide-container" className="slide-image" />
 
             <ControllerStyle>
                 <a id="prev" onClick={() => plusSlide(-1)}></a>
                 {
+
                     slides.map((image, index) => {
-                        return <Controller key={index} src={image.src} alt={image.alt}  pos={index} />
-                    })
-                }
+
+
+                         return <Controller key={index} src={image.src} alt={image.alt}  pos={index} />
+
+                        })
+                    }
 
                 <a id="next" onClick={() => plusSlide(+1)}></a>
             </ControllerStyle>

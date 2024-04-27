@@ -168,7 +168,27 @@ function Galeria() {
 
 
 
-            <Carousel responsive={responsive}>
+            <Carousel
+             additionalTransfrom={0}
+             arrows
+             autoPlay
+             autoPlaySpeed={1000}
+             centerMode={false}
+             className=""
+             containerClass="container-with-dots"
+             dotListClass=""
+             draggable
+             focusOnSelect={false}
+             infinite
+             itemClass=""
+             keyBoardControl
+             minimumTouchDrag={80}
+             pauseOnHover
+             renderArrowsWhenDisabled={false}
+             renderButtonGroupOutside={false}
+             renderDotsOutside={false}
+            
+            responsive={responsive}>
                 {
                     images.map((image, index) => (<Image src={image.src} alt={image.alt} key={index} id={index} onClick={(e) => openModal(e)} />))
 

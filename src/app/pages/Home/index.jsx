@@ -14,8 +14,10 @@ import { NavBar } from "../../shared/components/NavBar"
 import { Partener } from "../Partener"
 import { Link, animateScroll as scroll } from "react-scroll";
 import { CompanyList } from "../../shared/components/CompanyCard/CompanyCard"
-import { NewCardCarro } from "../../shared/components/Card/Card"
+import { NewCardCarro} from "../../shared/components/Card/Card"
 import { useState } from "react"
+import { NewCardTerrenoFazenda } from "../../shared/components/Card/CardFazenda"
+import PageCarro from "../Carro/index.jsx";
 
 const StyleHome = styled.div`
   width: 100%;
@@ -33,7 +35,7 @@ const StyleHome = styled.div`
 
 
 export const Home = () => {
-  const [categoria,setCategoria]=useState(1);
+  const [categoria,setCategoria]=useState();
 
   
   const listCategoria=[
@@ -54,23 +56,23 @@ export const Home = () => {
 
   ]
 
-  
   const ListDeFazendaTerreno=[
-    {localizacao:"Luanda", comprimento:"150",largura:"150",preco:"1599",tipo:"Fazendo",image:"https://www.kotas.com.br/blog/wp-content/uploads/2023/09/a-fazenda-playplus.jpg"},
-    {localizacao:"Bengo", comprimento:"150",largura:"150",preco:"1399",tipo:"Fazendo",image:"https://get.wallhere.com/photo/1920x1080-px-barn-clouds-crop-farm-fields-grass-landscapes-Rustic-sky-1690913.jpg"},
-    {localizacao:"Cacuaco", comprimento:"150",largura:"150",preco:"1299",tipo:"Fazendo",image:"https://www.coffeemaxgreen.com/wp-content/uploads/2019/12/INSTITUCIONAL-MCMIAKI-COFFEE-191.jpg"},
+    {localizacao:"Luanda",dimensao:"2000x900",preco:"1599",tipo:"Fazendo",image:"https://www.kotas.com.br/blog/wp-content/uploads/2023/09/a-fazenda-playplus.jpg"},
+    {localizacao:"Bengo",dimensao:"14x13",preco:"1399",tipo:"Fazendo",image:"https://get.wallhere.com/photo/1920x1080-px-barn-clouds-crop-farm-fields-grass-landscapes-Rustic-sky-1690913.jpg"},
+    {localizacao:"Cacuaco",dimensao:"14x13",preco:"1299",tipo:"Fazendo",image:"https://www.coffeemaxgreen.com/wp-content/uploads/2019/12/INSTITUCIONAL-MCMIAKI-COFFEE-191.jpg"},
+    {localizacao:"Zango",dimensao:"14x13",preco:"1500",tipo:"Terrono",image:"https://www.coffeemaxgreen.com/wp-content/uploads/2019/12/INSTITUCIONAL-MCMIAKI-COFFEE-191.jpg"},
+    {localizacao:"Huambo",dimensao:"50x50",preco:"1299",tipo:"Terreno",image:"https://www.coffeemaxgreen.com/wp-content/uploads/2019/12/INSTITUCIONAL-MCMIAKI-COFFEE-191.jpg"},
 
   ]
   function buscarPorCategora(value){
-    alert(value)
     setCategoria(value);
   }
 
 
   const Produto=(categoria)=>{
       switch (categoria){
-        case categoria ==1:{
-          (ListDeCarros.map((car,index)=>(
+        case "1":{
+         return (ListDeCarros.map((car,index)=>(
             <NewCardCarro
             key={index}
             image={car.image}
@@ -151,6 +153,14 @@ export const Home = () => {
       items: 5,
       partialVisibilityGutter: 40
     },
+    desktoplite: {
+      breakpoint: {
+        max: 1920,
+        min: 800
+      },
+      items: 4,
+      partialVisibilityGutter: 40
+    },
     mobile: {
       breakpoint: {
         max: 464,
@@ -178,8 +188,33 @@ export const Home = () => {
   swipeable
 >
 
+
       {
-        Produto(categoria)
+        ListDeFazendaTerreno.map((produto,index)=>(
+          <NewCardTerrenoFazenda
+            key={index}
+            dimensao={produto.dimensao}
+            image={produto.image}
+            localizacao={produto.localizacao}
+            preco={produto.preco}
+            tipo={produto.tipo}
+
+          />
+        ))
+
+      }
+      {
+        ListDeCarros.map((car,index)=>(
+          <NewCardCarro
+          image={car.image}
+          nomeDoCarro={car.nomeDoCarro}
+          price={car.price}
+          tipoCombustivel={car.tipoCombustivel}
+          tipoDefreio={car.tipoDefreio}
+          tipoMotor={car.tipoMotor}
+          key={index}
+          />
+        ))
       }
         
  
@@ -195,6 +230,7 @@ export const Home = () => {
       </Container>
     </Fade>
     
+  <PageCarro/>
     <Container>
       <div className="container">
         <Services />

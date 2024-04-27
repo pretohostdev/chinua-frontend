@@ -115,3 +115,27 @@ margin-bottom: 5px;
 
 
 `;
+
+export const ContainerFlexTitle=styled.div`
+div{
+    width: 110px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 5px;
+    padding: 4px;
+    background:#fbbf24 ;
+    margin-bottom: 15px;
+    img{
+        width: 20px;
+        height: auto;
+    }
+    span{
+       margin-left: 2px;
+    font-size: small;
+    font-weight: 500;
+    }
+}
+`;
