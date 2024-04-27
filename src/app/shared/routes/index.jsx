@@ -11,6 +11,7 @@ import { Taxi } from "../../pages/Taxi";
 import { Repair } from "../../pages/Repair";
 import { AutoParts } from "../../pages/AutoParts";
 import ProductDetails from "../../pages/Produto";
+import Admin from "../../pages/Admin/index.jsx";
 
 const App = () => {
   return (
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
       }, {
         path: '/partner',
         element: <Partener />
+      },
+      {
+        path:"/admin/76",
+        element: <Admin/>
       }
     ],
     
