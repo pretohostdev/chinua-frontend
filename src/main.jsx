@@ -1,11 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from "react-router-dom";
-import { router } from './app/shared/routes'
+import RoutesApp from './app/shared/routes'
 import "react-multi-carousel/lib/styles.css";
 import "./index.css"
+import UserContextApp from './app/context/UserContext';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UserContextApp>
+    <RoutesApp/>
+    </UserContextApp>
   </React.StrictMode>,
 )

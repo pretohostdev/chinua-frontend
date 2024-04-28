@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import { useContext, useEffect, useState,useHistory ,useCallback} from "react";
+import { CookiesProvider, useCookies ,Cookies,withCookies} from 'react-cookie'
 import {
     ContainerMain,
     ContainerAside,
@@ -9,11 +9,28 @@ import {
 import { FormCarro } from "./components/FormCarro.jsx";
 import { FormFazendaTerreno } from "./components/FormFazendaTerreno.jsx";
 import { FormImovel } from "./components/FormImovel.jsx";
-
+import { UserContext } from "../../context/UserContext.jsx";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Admin() {
-
     const [form, setForm]=useState(1);
+    const {cookies}=useContext(UserContext);
+   
+  
+
+    
+    useEffect(  ()=>{
+        
+   
+    
+            if(!cookies){
+              window.location.href="/login";
+              return;
+            }
+    
+
+    },[cookies])
+
 
 
 
@@ -27,8 +44,12 @@ export default function Admin() {
             <ContainerMain>
         <ContainerAside   >
                 <p className="font-bold text-black text-xl">Administrador</p>
-                <p  className="font-thin text-black " >Francisco Pedro</p>
-                <p>01/01/2023</p>
+                <p  className="font-thin text-black " >{cookies?.user.usuarioLogado.primeiroNome + " " + cookies?.user.usuarioLogado.segundoNome}</p>
+                <p  className="font-thin text-black " >{cookies?.user.usuarioLogado.email}</p>
+ 
+                <p>Data: {new Date().toLocaleDateString("pt-AO")}</p>
+                <p>Hora: {new Date().toLocaleTimeString("pt-AO")}</p>
+                <hr className="border-2 border-black mb-2"/>
                 <div className=" flex flex-column justify-start ">
                     <p className="font-bold">Menu</p>
                     <hr className="border-2 border-black mb-2"/>
