@@ -19,11 +19,33 @@ h3{
 }
 `
 export const ContainerImage=styled.div`
-
+width: 100%;
+position: relative;
 img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     height: 200px;
     border-radius: 10px;
 }
+
+h3 {
+      
+        position: absolute;
+
+    top: 25%;
+    left: 25%;
+    right: 0;
+    bottom: 0;
+        transform: translate(-50%, -50%);
+        font-weight: 400;
+        font-size: 40px;
+        transform: rotate(-45deg);
+    
+        color: red;
+        display: ${({ status }) =>(status ? "block" : "none")};
+    }
 `;
 
 export const ContainerNomeDoProduto=styled.div`

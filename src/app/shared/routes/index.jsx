@@ -17,6 +17,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext.jsx";
 import { RouterProvider } from "react-router-dom";
 import { Cookies } from "react-cookie";
+import PageCarro from "../../pages/Carro/index.jsx";
 const App = () => {
 
   
@@ -61,6 +62,10 @@ export default function RoutesApp(){
         {
           path:"/login",
           element: <LoginForm/>
+        },
+        {
+          path:"/carros",
+          element:<PageCarro/>
         }
       ],
       

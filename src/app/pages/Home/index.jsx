@@ -230,7 +230,14 @@ export const Home = () => {
       </Container>
     </Fade>
     
-  <PageCarro/>
+        <Link to={"/carros"} >
+        <button className="button-link  p-2 bg-gray-500 text-white rounded-lg ">
+        Carros
+        </button>
+        </Link>
+      <Link>Fazenda e Terreno </Link>
+      
+
     <Container>
       <div className="container">
         <Services />

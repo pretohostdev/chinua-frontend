@@ -4,11 +4,15 @@ import MotorDeCarro from "./assets/icons_carro/motor-de-carro.png"
 import TipoDeCombustivel from "./assets/icons_carro/posto-de-gasolina.png"
 
 
-export const NewCardCarro=({nomeDoCarro,price,image,tipoDefreio,tipoMotor,tipoCombustivel})=>{
+export const NewCardCarro=({nomeDoCarro,price,image,tipoDefreio,tipoMotor,tipoCombustivel,status})=>{
     return(
         <ConatinerCardProduto>
-              <ContainerImage>
-                  <img src={image} width={250} height={250}   />
+              <ContainerImage status={status}  >
+                  <img src={image}  width={250} height={250}   />
+                {
+                        status==="Vendido"&& <h3>Vendido</h3>  
+                }
+                  
               </ContainerImage>
               <ContainerNomeDoProduto>
                 <p>{nomeDoCarro}</p>

@@ -20,9 +20,13 @@ export default function UserContextApp({children}){
         setUser(null);
     }
     
-    async function register(nome, email, senha){
-        await api.post("/carro/register",
-        {nome, email, senha},{auth:false, withCredentials:true, headers: { 'Content-Type': 'application/json',"Authorization": "Bearer " + token, "Accept": "application/json      "}})
+    async function registarCarro(formData){
+        await api.post("/carro/registar",formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            "authorization": "Bearer" + token
+        })
         .then(response => {
             console.log(response.data);
         })
@@ -51,7 +55,7 @@ export default function UserContextApp({children}){
     return(
         <CookiesProvider >
 
-        <UserContext.Provider value={{user, cookies, setCookies, setUser,login, logout}}>
+        <UserContext.Provider value={{user, cookies, setCookies, setUser,login, logout,registarCarro}}>
 
             {children}
         </UserContext.Provider>
