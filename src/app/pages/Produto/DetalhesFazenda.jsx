@@ -9,24 +9,17 @@ import { Container } from "../Home/styles";
 import Contacto from "../../shared/components/Contacto";
 import FormatarMoeda from "../../shared/utils/formatarMoeda";
 
-export default function ProductDetails() {
-  const [produto,setProduto]=useState({})
+export default function ProductDetailsFazenda() {
+  const [fazenda,setFazenda]=useState({})
   const [listaImage,setListaImage]=useState([])
   const {IDproduto}=useParams()
 
-
-  const message=`
-  Olá, estou interessado em *comprar/alugar* um carro da Chinua, 
-  especificamente o modelo Marca: *${produto.nomeDoCarro}* com referência: *${IDproduto}*.
-
-  Gostaria de saber mais detalhes sobre disponibilidade e condições.Agradeço desde já pela atenção.
-  `
   async function buscarProduto(IDproduto){
-    await api.get(`/carro/listar/${IDproduto}`)
+    await api.get(`/terra/listar/${IDproduto}`)
     .then(async (response)=>{
-        const carro= await response.data
-        const images= await carro.image.map(img=>img)
-        setProduto(()=>carro)
+        const fazenda= await response.data
+        const images= await fazenda.image.map(img=>img)
+        setFazenda(()=>fazenda)
         setListaImage(()=>images)
       
         
@@ -122,7 +115,7 @@ export default function ProductDetails() {
         >
             {listaImage && listaImage.map((img, index) => (
                 <div key={index} className="flex items-center justify-center rounded  ">
-                    <img src={`http://127.0.0.1:3000/uploads/carros/${img}`} style={{
+                    <img src={`http://127.0.0.1:3000/uploads/fazendas/${img}`} style={{
                       width:"100%",
                       borderRadius:8
                       
@@ -133,10 +126,10 @@ export default function ProductDetails() {
         </div>
         <ContainerParteDeBaixo>
                     <div>
-                        <p>Nome:<span>{produto.nomeDoCarro}</span></p>
+                        <p>Tipo:<span>{fazenda.tipo}</span></p>
                     </div>
                     <div>
-                        <p>Preço: <span>{FormatarMoeda(produto.price,2,"AOA")}</span></p>
+                        <p>Preço: <span>{FormatarMoeda(fazenda.price,2,"AOA")}</span></p>
                     </div>
         </ContainerParteDeBaixo>
       </div>
@@ -151,19 +144,16 @@ export default function ProductDetails() {
 
       }}>
         <ContainerTipoPecas>
-          <p>Motor: <span>{produto.tipoMotor}</span> </p>
+          <p>Localização: <span>{fazenda.localizacao}</span> </p>
         </ContainerTipoPecas>
 
         <ContainerTipoPecas>
-          <p>Freio: <span>{produto.tipoDefreio}</span> </p>
-        </ContainerTipoPecas>
-        <ContainerTipoPecas>
-          <p>Combustivel: <span>{produto.tipoCombustivel}</span>  </p>
+          <p>Dimensão: <span>{fazenda.dimensao}</span> </p>
         </ContainerTipoPecas>
 
 
         <ContainerFazerPedido>
-          <a  href={`https://api.whatsapp.com/send?phone=+244923000143&text=${message}`} >Fazer Pedido</a>
+          <a  href="#" >Fazer Pedido</a>
         </ContainerFazerPedido>
         
         

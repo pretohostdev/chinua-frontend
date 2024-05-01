@@ -69,6 +69,11 @@ export const Taxi = () => {
                                 <h2>Serviço 24/7</h2>
                                 <p>Nosso serviço está disponível 24 horas por dia, 7 dias por semana, para atender às suas necessidades.</p>
                             </Card>
+                            <Card>
+                                <FontAwesomeIcon icon={faTaxi} size="2x" />
+                                <h2>Gestão de Taxi</h2>
+                                <p>Otimizando Seu Negócio e Elevando a Experiência do Cliente.</p>
+                            </Card>
                         </div>
                     </Content>
                     <ContainerContacto>

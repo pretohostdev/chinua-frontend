@@ -1,7 +1,7 @@
 
 // import { Container } from './styles';
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Link as LinkA, animateScroll as scroll } from "react-scroll";
 
 <Link
@@ -44,16 +44,21 @@ export const Nav=(props)=> {
           <a href="#oquefalam">O que falam</a>
         </ListItem> 
         <ListItem>
-          <Link target="#Parceiro" to="/" children>
-            <a   href="#Parceiro">Parceiro</a>
-          </Link>
+          <NavLink target="#Parceiro" to="/" children  >
+            <a   href="/#Parceiro" target="#Parceiro"  >Parceiro</a>
+          </NavLink>
        
         </ListItem> 
         <ListItem>
-          <a href="#contact">Contacto</a>
+        <NavLink target="#Parceiro" to="/" children  >
+            <a   href="/#contact" target="#Parceiro"  >Contacto</a>
+          </NavLink>
+         
         </ListItem> 
         <ListItem >
-          <Link id='contacto'>+244 923 000 000</Link>
+    
+            <a href={`https://api.whatsapp.com/send?phone=+244923000143&text=Olá!`}  target="_blank" >+244 923 000 000</a>
+     
         </ListItem> 
         
     </Container>

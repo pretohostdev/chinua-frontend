@@ -7,7 +7,7 @@ import {
 } from "./style"
 import { Fade } from "react-awesome-reveal"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTools, faProjectDiagram, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faTools, faProjectDiagram, faShoppingCart,faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 import VideoMecanica from "../../../assets/video/mecanica_01.mp4"
 
 import Contacto from "../../shared/components/Contacto";
@@ -33,6 +33,11 @@ export const Repair = () => {
       icon: faShoppingCart,
       title: 'Venda',
       description: 'Vendas de equipamentos, peças. Assessoria e Planejamento Térmico, tudo que você precisa para o seu ambiente.',
+    },
+    {
+      icon: faMoneyBill,
+      title: 'Compra de Equipamentos',
+      description: 'Somos especializados na compra de todo tipo de equipamentos e peças, mesmo que estejam estragados',
     },
     {
       icon: faProjectDiagram,

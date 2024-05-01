@@ -18,11 +18,11 @@ width: 100%;
 justify-content: space-around;
 align-items: start;
 flex-direction: row;
-padding: 0 20px;
+gap: 5px;
 margin-top: 20px;
 margin-bottom: 20px;
-background-color: #fff;
-border-radius: 10px;
+background-color: #f6f6f5;
+
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 @media (max-width: 768px) {
@@ -41,8 +41,8 @@ height: 500px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   p{
     font-size: 18px;
     font-weight: bold;
@@ -130,6 +130,103 @@ export const Form = styled.form`
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+
+`;
+
+
+
+
+
+
+
+export const ContaienerMain=styled.main`
+display: flex;
+width: 80%;
+background: #e7e7e6;
+border-radius: 8px;
+
+
+`;
+export const ContainerContentsFlex=styled.div`
+padding: 12px;
+display: flex;
+width: 100%;
+gap: 5px;
+
+
+`;
+
+export const ContainerFormUpdate=styled.div`
+width: 70%;
+background: #d1d0d0;
+border-radius: 8px;
+padding: 10px;
+flex-direction: column;
+`;
+
+
+
+export const ContainerFormUpdateHeader=styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+background: #5e5d5c;
+height: 40px;
+border-radius: 8px;
+
+
+p{
+  color: #fff;
+  font-weight: 600;
+}
+`;
+
+
+
+export const ContainerFormUpdateContent=styled.div`
+width: 100%;
+height: 94%;
+background: #e7e6e6;
+margin-top: 5px;
+border-radius: 8px;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+flex-direction: row;
+padding: 10px;
+gap: 5px;
+`
+export const ContainerFormLeft=styled.div``;
+export const ContainerButtonSelecinar=styled.div`
+display: flex;
+flex-direction: column;
+gap: 5px;
+
+`;
+
+export const ContainerBuscarProduto=styled.div`
+width: 100%;
+margin-top: 5px;
+margin-bottom: 5px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #e7e6e6;
+border: 1px solid #898887;
+border-radius: 8px;
+
+
+
+input{
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 3px;
+  color: #121212;
+  font-weight: 600;
+}
+
+
 `;

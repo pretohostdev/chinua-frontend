@@ -7,6 +7,8 @@ import { Button } from '../Button';
 import { Box } from '../Box';
 import styled from 'styled-components';
 import dark from '../../styles/theme/dark';
+import Carousel from 'react-multi-carousel';
+import { Link } from 'react-router-dom';
 
 
 const CiteStyle = styled.div`
@@ -69,8 +71,8 @@ const StyleText = styled.h1`
 `
 const Text = () => {
     return <StyleText>
-        LIDER DE  <br />
-        SUV  EM <br />
+        LIDER DE<br />
+        INTERMEDIAÇÕES EM<br />
         ANGOLA
     </StyleText>
 }
@@ -83,12 +85,81 @@ const Cite = () => {
             <Box />
             <Text />
             <p>
-                Condomínio XXX <br />
-                Piscina Privada
+                Lider em intermediações <br />
+                Carros | Fazendas | Imoveis
             </p>
+
+            <div style={{position:"relative", width:300}} >
+
+            <Carousel
+             additionalTransfrom={0}
+             arrows={false}
+             autoPlay
+             autoPlaySpeed={3000}
+             centerMode={false}
+             className=""
+             containerClass="container-with-dots"
+             dotListClass=""
+             draggable
+             focusOnSelect={false}
+             infinite
+             itemClass=""
+             keyBoardControl
+             minimumTouchDrag={80}
+             pauseOnHover
+             renderArrowsWhenDisabled={false}
+             renderButtonGroupOutside={false}
+
+        
+             
+             renderDotsOutside={false}
+             responsive={{
+               desktop: {
+                 breakpoint: {
+                   max: 3000,
+                   min: 1024
+                 },
+                 items: 1,
+                 partialVisibilityGutter: 0
+               },
+               mobile: {
+                 breakpoint: {
+                   max: 464,
+                   min: 0
+                 },
+                 items: 1,
+                 partialVisibilityGutter: 0
+               },
+               tablet: {
+                 breakpoint: {
+                   max: 1024,
+                   min: 464
+                 },
+                 items: 1,
+                 partialVisibilityGutter: 0
+               }
+             }}
+             rewind={false}
+             rewindWithAnimation={false}
+             rtl={false}
+             shouldResetAutoplay
+             showDots={false}
+             sliderClass=""
+             slidesToSlide={1}
+             swipeable
+            >
             <Button theme='secondary'>
-                Ver tudo
+                <Link to={"/carros"}>
+                Carros
+                </Link>
             </Button>
+            <Button theme='secondary'>
+                <Link to={"/terras"}>
+                Fazendas
+                </Link>
+            </Button>
+            </Carousel>
+            </div>
         </CiteStyle>
     );
 }

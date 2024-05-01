@@ -9,7 +9,7 @@ import IconLocalizacao from "./assets/icons_fazenda/pin-de-localizacao.png"
 
 
 
-export const NewCardTerrenoFazenda=({localizacao,image,dimensao,preco,tipo})=>{
+export const NewCardTerrenoFazenda=({localizacao,image,dimensao,preco,tipo,id})=>{
     return(
         <ConatinerCardProduto
         style={{height:"380px"}}
@@ -33,7 +33,7 @@ export const NewCardTerrenoFazenda=({localizacao,image,dimensao,preco,tipo})=>{
               <span>{dimensao}</span>
            </div>
         </ContainerDiscription>
-        <ConatinerButton   to={"/produto/detalhes/5"}>
+        <ConatinerButton   to={`/produto/terra/${id}`}>
               Ver mais
         </ConatinerButton>
   </ConatinerCardProduto>

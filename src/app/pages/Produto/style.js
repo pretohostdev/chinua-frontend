@@ -52,7 +52,7 @@ export const Container = styled.div`
     //overflow-y: hidden!important;
     
     ${props => props.back == "true" ? `background-image: url(${chinBlack}); background-repeat: no-repeat; background-size: 110%; background-position:center;    background-attachment: fixed;` : ''};
-    ${props => props.first=="true" && `height: calc(100vh - 6rem)`};
+    ${props => props.first == "true" && `height: calc(100vh - 6rem)`};
     &::before{
         content: "";
         width: 100%;
@@ -66,7 +66,7 @@ export const Container = styled.div`
     background:transparent;
 `
 
-export const ButtonPedido=styled.button`
+export const ButtonPedido = styled.button`
   background: #daa520;
   color: #fff;
   border: none;
@@ -79,3 +79,75 @@ export const ButtonPedido=styled.button`
   }
 
 `
+
+export const ContainerFazerPedido = styled.div`
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 60%;
+background: #d28f3d;
+height: 40px;
+margin-bottom: 10px;
+border-radius: 8px;
+
+left: 20%;
+bottom: 0;
+
+
+a{
+  color: #fff;
+  font-size: 18px;
+}
+
+
+
+`;
+
+
+export const ContainerTipoPecas = styled.div`
+width:100%;
+background:#fde58a;
+height:60px;
+border-left:4px solid #d87607;
+margin-bottom:14px;
+display:flex;
+justify-content:"flex-start";
+align-items:"center";
+border-radius:8px;
+padding:8px;
+p{
+  font-size: 18px;
+  font-weight: 600;
+  span{
+    font-weight: 400;
+  }
+}
+
+`;
+
+export const ContainerParteDeBaixo=styled.div`
+display: flex;
+justify-content: center;
+align-items: flex-start;
+margin-top: 20px;
+width: 100%;
+height: 100px;
+background: #fff;
+border-radius: 8px;
+padding: 10px;
+flex-direction: column;
+
+div{
+
+  p{
+    font-weight: 400;
+    font-size: 24px;
+    
+    span{
+        margin-left: 10px;
+        font-weight: bold;
+    }
+  }
+}
+`;

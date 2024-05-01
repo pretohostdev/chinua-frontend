@@ -18,6 +18,8 @@ import { UserContext } from "../../context/UserContext.jsx";
 import { RouterProvider } from "react-router-dom";
 import { Cookies } from "react-cookie";
 import PageCarro from "../../pages/Carro/index.jsx";
+import PageFazenda from "../../pages/Fazenda/index.jsx";
+import ProductDetailsFazenda from "../../pages/Produto/DetalhesFazenda.jsx";
 const App = () => {
 
   
@@ -57,16 +59,21 @@ export default function RoutesApp(){
         },
         {
           path:"/admin/76",
-          element: cookies? <Admin/> :<Navigate to="/login"/>
+          element: cookies["user"]? <Admin/> :<Navigate to="/login"/>
         },
         {
           path:"/login",
-          element: <LoginForm/>
+          element:  cookies["user"]? <Navigate to="/admin/76"/> :<LoginForm/>
         },
         {
           path:"/carros",
           element:<PageCarro/>
+        },
+        {
+          path:"terras",
+          element:<PageFazenda/>
         }
+
       ],
       
     },
@@ -90,6 +97,7 @@ export default function RoutesApp(){
           path: 'auto-parts', 
           element: <AutoParts/>
         },
+
       ]
     },
     {
@@ -99,6 +107,10 @@ export default function RoutesApp(){
       children:[
        { path:"detalhes/:IDproduto",
        element:<ProductDetails/>
+        },
+        {
+          path:"terra/:IDproduto",
+          element:<ProductDetailsFazenda/>
         }
       ]
   

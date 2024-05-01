@@ -1,12 +1,12 @@
 import styled from "styled-components"
-import { Container, ContainerTitle,ContainerFiltro,Footer,ListProduto,ContainerButtonProduto } from "./styles"
+import { Container, ContainerTitle,ContainerFiltro } from "./styles"
 import { Icons } from "../../shared/components/Icons"
 import { CiteContainer } from "../../shared/components/CiteContainer"
-import { NavCategorias } from "../../shared/components/NavCategorias"
+
 import { Services } from "../../shared/components/Services"
 import Contacto from "../../shared/components/Contacto"
 import { Sobre } from "../../shared/components/Sobre"
-import FooterContainer from "../../shared/components/FooterContainer"
+
 import Galeria from "../../shared/components/Galeria"
 import Carousel from "react-multi-carousel";
 import { Fade } from "react-awesome-reveal"
@@ -15,9 +15,12 @@ import { Partener } from "../Partener"
 import { Link, animateScroll as scroll } from "react-scroll";
 import { CompanyList } from "../../shared/components/CompanyCard/CompanyCard"
 import { NewCardCarro} from "../../shared/components/Card/Card"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { NewCardTerrenoFazenda } from "../../shared/components/Card/CardFazenda"
-import PageCarro from "../Carro/index.jsx";
+
+import { useContext } from "react"
+import { UserContext } from "../../context/UserContext.jsx"
+import { Team } from "../../shared/components/Team/index.jsx"
 
 const StyleHome = styled.div`
   width: 100%;
@@ -36,7 +39,7 @@ const StyleHome = styled.div`
 
 export const Home = () => {
   const [categoria,setCategoria]=useState();
-
+  const{listaDeCarro,buscarTodosCarros}=useContext(UserContext)
   
   const listCategoria=[
       {categoria:""},
@@ -47,14 +50,11 @@ export const Home = () => {
   ]
 
 
-  const ListDeCarros=[
-    {nomeDoCarro:"Mercedes Benz",price:"299.00",image:"https://i.pinimg.com/originals/8a/53/ea/8a53ea3bd257644431fd808e548b2707.jpg",tipoDefreio:"ABS e o ESP",tipoMotor:"V12 Engine",tipoCombustivel:"Diesel"},
-    {nomeDoCarro:"Land Cruiser",price:"259.99",image:"https://i.pinimg.com/originals/39/d7/9d/39d79d25498c93dffba29a542d550051.jpg",tipoDefreio:"ABS e o ESP",tipoMotor:"V8 Engine",tipoCombustivel:"Diesel"},
-    {nomeDoCarro:"Jeetur",price:"159.99",image:"https://www.simplycarbuyers.com/blog/wp-content/uploads/2023/01/70-1170x669-2.png",tipoDefreio:"ABS e o ESP",tipoMotor:"V6",tipoCombustivel:"Diesel"},
-    {nomeDoCarro:"Haval H6",price:"299.00",image:"https://s0.rbk.ru/v6_top_pics/media/img/9/22/755941158460229.jpg",tipoDefreio:"ABS e o ESP",tipoMotor:"V6",tipoCombustivel:"Diesel"},
-    {nomeDoCarro:"Land Cruiser Town Turbo",price:"299.00",image:"http://images.summitmedia-digital.com/topgear/images/2021/07/22/lc300-6-1626947643.jpg",tipoDefreio:"ABS e o ESP",tipoMotor:"V12 Engine",tipoCombustivel:"Diesel"},
+  useEffect(()=>{
+    buscarTodosCarros()
+  })
 
-  ]
+
 
   const ListDeFazendaTerreno=[
     {localizacao:"Luanda",dimensao:"2000x900",preco:"1599",tipo:"Fazendo",image:"https://www.kotas.com.br/blog/wp-content/uploads/2023/09/a-fazenda-playplus.jpg"},
@@ -72,7 +72,7 @@ export const Home = () => {
   const Produto=(categoria)=>{
       switch (categoria){
         case "1":{
-         return (ListDeCarros.map((car,index)=>(
+         return (listaDeCarro.map((car,index)=>(
             <NewCardCarro
             key={index}
             image={car.image}
@@ -204,7 +204,7 @@ export const Home = () => {
 
       }
       {
-        ListDeCarros.map((car,index)=>(
+        listaDeCarro.map((car,index)=>(
           <NewCardCarro
           image={car.image}
           nomeDoCarro={car.nomeDoCarro}
@@ -213,6 +213,8 @@ export const Home = () => {
           tipoDefreio={car.tipoDefreio}
           tipoMotor={car.tipoMotor}
           key={index}
+          id={car._id}
+          status={car.status}
           />
         ))
       }
@@ -254,6 +256,8 @@ export const Home = () => {
 
   
 
+
+
 <scroll>
 
     <Fade cascade>
@@ -262,6 +266,8 @@ export const Home = () => {
       </Container>
     </Fade>
 </scroll>
+
+<Team/>
 
     <Container>
       <div className="container">

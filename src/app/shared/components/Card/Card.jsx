@@ -2,15 +2,16 @@ import { ConatinerCardProduto,ContainerNomeDoProduto,ConatinerButton,ContainerIm
 import DiscoDeFreio from "./assets/icons_carro/disco-de-freio.png"
 import MotorDeCarro from "./assets/icons_carro/motor-de-carro.png"
 import TipoDeCombustivel from "./assets/icons_carro/posto-de-gasolina.png"
+import FormatarMoeda from "../../utils/formatarMoeda"
 
 
-export const NewCardCarro=({nomeDoCarro,price,image,tipoDefreio,tipoMotor,tipoCombustivel,status})=>{
+export const NewCardCarro=({nomeDoCarro,price,image,tipoDefreio,tipoMotor,tipoCombustivel,status,id})=>{
     return(
         <ConatinerCardProduto>
               <ContainerImage status={status}  >
                   <img src={image}  width={250} height={250}   />
                 {
-                        status==="Vendido"&& <h3>Vendido</h3>  
+                  status==="Vendido"&& <h3>Vendido</h3>  
                 }
                   
               </ContainerImage>
@@ -18,7 +19,10 @@ export const NewCardCarro=({nomeDoCarro,price,image,tipoDefreio,tipoMotor,tipoCo
                 <p>{nomeDoCarro}</p>
               </ContainerNomeDoProduto>
               <ContainerPrice>
-                  <p>Preco: <span>{price}</span>AOA</p>
+                  <p>Preco: <span>{FormatarMoeda(price,2)}</span></p>
+              </ContainerPrice>
+              <ContainerPrice>
+                  <p>Ref: <span>{id}</span></p>
               </ContainerPrice>
               <ContainerDiscription>
                  <div>
@@ -35,7 +39,7 @@ export const NewCardCarro=({nomeDoCarro,price,image,tipoDefreio,tipoMotor,tipoCo
                  </div>
               </ContainerDiscription>
 
-              <ConatinerButton   to={"/produto/detalhes/5"}>
+              <ConatinerButton   to={`/produto/detalhes/${id}`}>
                     Ver mais
               </ConatinerButton>
         </ConatinerCardProduto>

@@ -1,26 +1,21 @@
 import api from "../../core/api/index.js";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { NewCardCarro } from "../../shared/components/Card/Card.jsx";
 import { NavBar } from "../../shared/components/NavBar/index.jsx";
 
 import Carousel from "react-multi-carousel";
+import { UserContext } from "../../context/UserContext.jsx";
 
 const API = import.meta.env.API_LOCAL
 export default function PageCarro() {
-    const [listaDeCarro, setListaDeCarro] = useState([])
+    const{listaDeCarro,buscarTodosCarros}=useContext(UserContext)
     const [quantidadeExibida, setQuantidadeExibida] = useState(10);
 
 
     const handleLimitChange = (quantidade) => {
         setQuantidadeExibida(quantidade);
     };
-    async function buscarTodosCarros() {
-        await api.get("/carro/listar")
-            .then(async (response) => {
-                const carros = await response.data;
-                setListaDeCarro(carros);
-            })
-    }
+    
     useEffect(() => {
         buscarTodosCarros()
     }, [quantidadeExibida]);
@@ -130,7 +125,7 @@ export default function PageCarro() {
 
                             listaDeCarro.slice(0, quantidadeExibida).map((carro, index) => (
                                 <NewCardCarro
-                                    image={`http://localhost:3000/uploads/carros/${carro.image.map(images => images)[0]}`}
+                                    image={`http://127.0.0.1:3000/uploads/carros/${carro.image.map(images => images)[0]}`}
                                     nomeDoCarro={carro.nomeDoCarro}
                                     price={carro.price}
                                     tipoCombustivel={carro.tipoCombustivel}
@@ -138,6 +133,7 @@ export default function PageCarro() {
                                     tipoMotor={carro.tipoMotor}
                                     key={carro._id}
                                     status={carro.status}
+                                    id={carro._id}
                                 />
                             ))
                         }
