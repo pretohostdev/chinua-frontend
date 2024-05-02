@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Logos } from "../../constants/logos";
 import {CompanyListContent,CompanyCardLink} from "./styles"
 
