@@ -14,6 +14,8 @@ export default function ProductDetailsFazenda() {
   const [listaImage,setListaImage]=useState([])
   const {IDproduto}=useParams()
 
+
+
   async function buscarProduto(IDproduto){
     await api.get(`/terra/listar/${IDproduto}`)
     .then(async (response)=>{
@@ -26,6 +28,11 @@ export default function ProductDetailsFazenda() {
       })
       
   }
+  const message=`
+  Olá, estou interessado em *comprar/alugar* uma Fazenda ou Terreno da Chinua, 
+  especificamente  tipo *${fazenda.tipo}*    com  nome: *${fazenda.tipo}* com referência: *${IDproduto}*.
+  Gostaria de saber mais detalhes sobre disponibilidade e condições.Agradeço desde já pela atenção.
+  `
 
   
   useEffect(()=>{
@@ -153,7 +160,7 @@ export default function ProductDetailsFazenda() {
 
 
         <ContainerFazerPedido>
-          <a  href="#" >Fazer Pedido</a>
+          <a  href={`https://api.whatsapp.com/send?phone=+244939593385&text=${message}`}  >Fazer Pedido</a>
         </ContainerFazerPedido>
         
         

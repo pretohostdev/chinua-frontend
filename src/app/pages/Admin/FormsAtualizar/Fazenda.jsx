@@ -51,7 +51,7 @@ export const FormAtualizarFazenda = ({idProduto}) => {
     return (
         <>
             <Form onSubmit={handleSubmit}>
-                
+            <h2 className="font-bold text-2xl text-center mb-4 mt-4"  >Atualizar Fazenda || Terreno</h2>
             <ContainerLabelInput>
                 <label>Dimensão</label>
                 <input ref={inputDimensao} type="text"  required={[true,"dimensão"]} />

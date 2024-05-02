@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 
 export const CompanyCardLink = styled(Link)`
+
+
+margin: 0px 40px;
   a {
     display: block;
     text-align: center;
@@ -23,9 +26,12 @@ export const CompanyCardLink = styled(Link)`
 `;
 
 export const CompanyListContent = styled.div`
-    width: 100%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-around;
+  justify-content:center;
+  align-items: center;
   gap: 20px;
+
+  margin: 25px 0px;
 `;

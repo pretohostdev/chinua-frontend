@@ -165,7 +165,7 @@ export default function ProductDetailsImovel() {
 
 
         <ContainerFazerPedido>
-          <a href={`https://api.whatsapp.com/send?phone=+244923000143&text=${message}`} >Fazer Pedido</a>
+          <a href={`https://api.whatsapp.com/send?phone=+244939593385&text=${message}`} >Fazer Pedido</a>
         </ContainerFazerPedido>
         
         

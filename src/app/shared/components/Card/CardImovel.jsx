@@ -20,9 +20,9 @@ import FormatarMoeda from "../../utils/formatarMoeda"
 })=>{
       return(
           <ConatinerCardProduto
-          style={{height:"470px"}}
+          style={{height:"445px"}}
           >
-          <ContainerImage>
+          <ContainerImage  status={status} >
               <img src={image} width={250} height={250}   />
                 {
                   status==="Vendido" && <h3>Vendido</h3>  
@@ -34,9 +34,7 @@ import FormatarMoeda from "../../utils/formatarMoeda"
           <ContainerNomeDoProduto>
             <p>Nome: {nomeDoImovel}</p>
           </ContainerNomeDoProduto>
-          <ContainerNomeDoProduto>
-            <p>Area: {area}</p>
-          </ContainerNomeDoProduto>
+    
           <ContainerNomeDoProduto>
             <p>Tipo: {tipo}</p>
           </ContainerNomeDoProduto>

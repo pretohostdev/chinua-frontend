@@ -59,6 +59,7 @@ export const FormAtualizarCarro = ({idProduto}) => {
     return (
         <>
             <Form onSubmit={handleSubmit}>
+            <h2 className="font-bold text-2xl text-center mb-4 mt-4"  >Atualizar Carro</h2>
                 <ContainerLabelInput>
                     <label>Nome do carro</label>
                     <input ref={inputNomeCarro} type="text" placeholder="" required={[true, "Nome do carro é necessário"]} />

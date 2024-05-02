@@ -84,11 +84,12 @@ export const Home = () => {
           <CompanyList/>
       </Container>
     </Fade>
-    <Fade direction="left">
+{ /*   <Fade direction="left">
       <Container>
         <Sobre />
       </Container>
     </Fade>
+*/}
     <Fade direction="left">
       <Container>
         <div style={{width:"100%"}} >
@@ -225,14 +226,14 @@ export const Home = () => {
     </Fade>
     
       <div  className="flex justify-center items-center gap-3 mb-6 mt-3   " >
-      <Link to={"/carros"} className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  "  style={{background:"#1561fb",}}  >Carros</Link>
-      <Link to={"/terras"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  "  style={{background:"#1561fb",}}    >Terreno </Link>
-      <Link to={"/imoveis"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  "  style={{background:"#1561fb",}} >Terreno</Link>
+      <Link to={"/carros"} className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold"  style={{background:"#1561fb",}}  >Pagina de Carros</Link>
+      <Link to={"/terras"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold"  style={{background:"#1561fb",}}    >Pagina de Terrenos </Link>
+      <Link to={"/imoveis"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold"  style={{background:"#1561fb",}} >Pagina de Imoveis </Link>
       </div>
       
 
     <Container>
-      <div className="container">
+      <div  id="about" className="container">
         <Services />
       </div>
     </Container>
@@ -258,7 +259,9 @@ export const Home = () => {
     </Fade>
 </scroll>
 
-<Team/>
+    <Container>
+    <Team/>
+    </Container>
 
     <Container>
       <div className="container">

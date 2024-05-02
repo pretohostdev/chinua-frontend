@@ -25,7 +25,9 @@ export const Nav=(props)=> {
         </ListItem> 
         
         <ListItem>
-          <Link>Escritório</Link>
+          
+          <a href="https://www.google.com/maps/place/PETROHOST,+LDA/@-8.8988882,13.207865,17.12z/data=!4m10!1m2!2m1!1spetrohost!3m6!1s0x1a51f783eef1fd19:0xf7df4316070ec55!8m2!3d-8.8988355!4d13.2116599!15sCglwZXRyb2hvc3RaCyIJcGV0cm9ob3N0kgETd2ViX2hvc3Rpbmdfc2VydmljZeABAA!16s%2Fg%2F11t1sjw09q?entry=ttu" target="_blank"  >Escritório</a>
+          
         </ListItem> 
         <ListItem>
         <LinkA
@@ -36,12 +38,10 @@ export const Nav=(props)=> {
   offset={-70}
   duration={500}
 >
-  Sobre
+  <ListItem   >
+    Sobre
+  </ListItem>
 </LinkA>
-        </ListItem> 
-        
-        <ListItem>
-          <a href="#oquefalam">O que falam</a>
         </ListItem> 
         <ListItem>
           <NavLink target="#Parceiro" to="/" children  >
@@ -57,8 +57,8 @@ export const Nav=(props)=> {
         </ListItem> 
         <ListItem >
     
-            <a href={`https://api.whatsapp.com/send?phone=+244923000143&text=Olá!`}  target="_blank" >+244 923 000 000</a>
-     
+            <a href={`https://api.whatsapp.com/send?phone=+24939593385&text=Olá!`} target="_blank" >+244 939 593 385</a>
+
         </ListItem> 
         
     </Container>

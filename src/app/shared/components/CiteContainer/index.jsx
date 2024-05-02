@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 
 const CiteStyle = styled.div`
-position: relative;
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 0px .6rem;

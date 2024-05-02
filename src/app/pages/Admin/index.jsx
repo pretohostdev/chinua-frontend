@@ -22,6 +22,7 @@ import { UserContext } from "../../context/UserContext.jsx";
 import { Navigate, useNavigate } from "react-router-dom";
 import { FormAtualizarCarro  } from "./FormsAtualizar/Carro.jsx";
 import { FormAtualizarFazenda } from "./FormsAtualizar/Fazenda.jsx";
+import { FormAtualizarImovel } from "./FormsAtualizar/Imovel.jsx";
 
 
 export default function Admin() {
@@ -119,6 +120,9 @@ export default function Admin() {
                                }
                                {
                                 formUpdate === 2 &&(<FormAtualizarFazenda idProduto={idProduto} />)
+                               }
+                                {
+                                formUpdate === 3 &&(<FormAtualizarImovel idProduto={idProduto} />)
                                }
                             </ContainerFormUpdateContent>
 

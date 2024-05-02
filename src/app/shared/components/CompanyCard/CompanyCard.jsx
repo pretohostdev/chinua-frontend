@@ -19,10 +19,17 @@ export  function CompanyList() {
         {name:"Auto Parts" ,image:`${Logos.logo_AutoParts}`, path:"/chinua/auto-parts" },
     ]
     return (
+     <>
+     <div>
+     <div className="flex justify-center items-center mt-4"  >
+          <h2  className="text-white font-medium text-3xl" >Outros sectores da Chinua Dembo</h2>
+     </div>
       <CompanyListContent>
        {listCompany.map(company => (
         <Card key={company.name} name={company.name} image={company.image} path={company.path} />
       ))}
       </CompanyListContent>
+     </div>
+     </>
     );
   }

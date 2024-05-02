@@ -80,9 +80,9 @@ const StyleLogo = styled.div`
             border-color: transparent transparent transparent ${dark.aux};
           }
         }
+    }
     
 `
-
 const StyleImage = styled.div`
     flex: auto;
     height: 500px;
@@ -102,19 +102,18 @@ const StyleImage = styled.div`
 `
 export const LogoElement = () => {
     return <Fade cascade>
-
         <Container>
             <StyleImage>
-                <img src={Image} alt="" />
+                <img src={"https://african.business/wp-content/uploads/2023/08/adobestock_65593948-1200x795.jpeg"} alt="" />
             </StyleImage>
             <StyleLogo>
                 <img src={Chin} alt="Logo" />
-                <span className="continuo">
+               {/* <span className="continuo">
                     Ler mais
                     <div className="arrow">
 
                     </div>
-                </span>
+                </span>*/}
             </StyleLogo>
         </Container>;
     </Fade>
