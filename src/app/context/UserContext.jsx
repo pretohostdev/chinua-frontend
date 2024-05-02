@@ -12,6 +12,7 @@ export default function UserContextApp({children}){
     const [token, setToken] = useState(cookies['user'] || null);
     const [listaDeCarro, setListaDeCarro] = useState([])
     const [fazendas, setFazendas] = useState([])
+    const [imoveis, setImoveis] = useState([])
 
     const [user, setUser] = useState({});
 
@@ -38,6 +39,14 @@ export default function UserContextApp({children}){
             .then(async (response) => {
                 const fazendas = await response.data;
                 setFazendas(fazendas);
+            })
+    }
+
+    async function buscarTodosImoveis(){
+        await api.get("/imovel/listar")
+            .then(async (response) => {
+                const imoveis = await response.data;
+                setImoveis(imoveis);
             })
     }
 
@@ -78,6 +87,22 @@ export default function UserContextApp({children}){
         })
     }
 
+
+    async function registarImovel(formData){
+        await api.post("/imovel/criar",formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+        })
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.log(error);
+            console.log(formData)
+        })
+    }
+
     
     async function login(email, senha){
         await api.post("/session/login",{email, senha})
@@ -106,7 +131,9 @@ export default function UserContextApp({children}){
               buscarTodasAsFazendas,
               fazendas,
               registarFazenda,
-              verificarUsuarioLogado
+              verificarUsuarioLogado,
+              buscarTodosImoveis,imoveis,
+              registarImovel
               }}>
 
             {children}

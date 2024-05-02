@@ -158,6 +158,11 @@ const Cite = () => {
                 Fazendas
                 </Link>
             </Button>
+            <Button theme='secondary'>
+                <Link to={"/imoveis"}>
+                Imoveis
+                </Link>
+            </Button>
             </Carousel>
             </div>
         </CiteStyle>

@@ -27,17 +27,17 @@ export default function PageFazenda() {
             <div style={{
                 
             }}>
-                <div style={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignContent: "center",
-                    flexDirection: "column"
+        <div style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignContent: "center",
+            flexDirection: "column"
                 }} >
 
 <Carousel
   additionalTransfrom={0}
-  arrows
+  arrows={false}
   autoPlay
   autoPlaySpeed={3000}
   centerMode={false}
@@ -132,6 +132,7 @@ export default function PageFazenda() {
                                     tipo={produdo.tipo}
                                     key={produdo._id}
                                     id={produdo._id}
+                                    status={produdo.status}
                                 />
                             ))
                         }

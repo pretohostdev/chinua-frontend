@@ -37,7 +37,7 @@ export default function PageCarro() {
 
 <Carousel
   additionalTransfrom={0}
-  arrows
+  arrows={false}
   autoPlay
   autoPlaySpeed={3000}
   centerMode={false}

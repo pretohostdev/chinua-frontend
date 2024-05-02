@@ -112,5 +112,6 @@ align-items: center;
 h2{
     color: #fff;
     font-weight: 300;
+    font-size: 32px;
 }
 `;

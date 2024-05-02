@@ -13,6 +13,9 @@ export const NewCardCarro=({nomeDoCarro,price,image,tipoDefreio,tipoMotor,tipoCo
                 {
                   status==="Vendido"&& <h3>Vendido</h3>  
                 }
+                 {
+                  status==="Alugado"&& <h3>Alugado</h3>  
+                }
                   
               </ContainerImage>
               <ContainerNomeDoProduto>

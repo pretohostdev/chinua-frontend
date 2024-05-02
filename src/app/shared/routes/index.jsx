@@ -1,7 +1,6 @@
 import { Navigate, Outlet, createBrowserRouter } from "react-router-dom";
 import { Home } from "../../pages/Home";
 import { GlobalStyle } from "../styles/globalStyle";
-import { NavBar } from "../components/NavBar";
 import dark from "../styles/theme/dark";
 import { Partener } from "../../pages/Partener";
 import FooterContainer from "../components/FooterContainer";
@@ -13,13 +12,15 @@ import { AutoParts } from "../../pages/AutoParts";
 import ProductDetails from "../../pages/Produto";
 import Admin from "../../pages/Admin/index.jsx";
 import { LoginForm } from "../../pages/Login/index.jsx";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../../context/UserContext.jsx";
 import { RouterProvider } from "react-router-dom";
-import { Cookies } from "react-cookie";
+
 import PageCarro from "../../pages/Carro/index.jsx";
 import PageFazenda from "../../pages/Fazenda/index.jsx";
 import ProductDetailsFazenda from "../../pages/Produto/DetalhesFazenda.jsx";
+import PageImovel from "../../pages/Imovel/index.jsx";
+import ProductDetailsImovel from "../../pages/Produto/DetalhesImovel.jsx";
 const App = () => {
 
   
@@ -70,8 +71,12 @@ export default function RoutesApp(){
           element:<PageCarro/>
         },
         {
-          path:"terras",
+          path:"/terras",
           element:<PageFazenda/>
+        },
+        {
+          path:"/imoveis",
+          element:<PageImovel/>
         }
 
       ],
@@ -111,7 +116,12 @@ export default function RoutesApp(){
         {
           path:"terra/:IDproduto",
           element:<ProductDetailsFazenda/>
+        },
+        {
+            path:"imovel/:IDproduto",
+            element:<ProductDetailsImovel/>
         }
+        
       ]
   
     }

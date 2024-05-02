@@ -12,7 +12,6 @@ import Carousel from "react-multi-carousel";
 import { Fade } from "react-awesome-reveal"
 import { NavBar } from "../../shared/components/NavBar"
 import { Partener } from "../Partener"
-import { Link, animateScroll as scroll } from "react-scroll";
 import { CompanyList } from "../../shared/components/CompanyCard/CompanyCard"
 import { NewCardCarro} from "../../shared/components/Card/Card"
 import { useEffect, useState } from "react"
@@ -21,6 +20,8 @@ import { NewCardTerrenoFazenda } from "../../shared/components/Card/CardFazenda"
 import { useContext } from "react"
 import { UserContext } from "../../context/UserContext.jsx"
 import { Team } from "../../shared/components/Team/index.jsx"
+import { NewCardImovel } from "../../shared/components/Card/CardImovel.jsx"
+import { Link } from "react-router-dom"
 
 const StyleHome = styled.div`
   width: 100%;
@@ -38,57 +39,31 @@ const StyleHome = styled.div`
 
 
 export const Home = () => {
-  const [categoria,setCategoria]=useState();
-  const{listaDeCarro,buscarTodosCarros}=useContext(UserContext)
+  const [categoria,setCategoria]=useState("Carro");
+  const{listaDeCarro,buscarTodosCarros,
+    fazendas,buscarTodasAsFazendas,
+    imoveis,buscarTodosImoveis
+  }=useContext(UserContext)
   
   const listCategoria=[
-      {categoria:""},
-      {categoria:"Fazenda"},
-      {categoria:"Casa"},
+      {categoria:"Imovel"},
       {categoria:"Terreno"},
       {categoria:"Carro"},
   ]
 
 
   useEffect(()=>{
-    buscarTodosCarros()
-  })
+    buscarTodosCarros();
+    buscarTodasAsFazendas();
+    buscarTodosImoveis()
+  },[categoria])
 
 
-
-  const ListDeFazendaTerreno=[
-    {localizacao:"Luanda",dimensao:"2000x900",preco:"1599",tipo:"Fazendo",image:"https://www.kotas.com.br/blog/wp-content/uploads/2023/09/a-fazenda-playplus.jpg"},
-    {localizacao:"Bengo",dimensao:"14x13",preco:"1399",tipo:"Fazendo",image:"https://get.wallhere.com/photo/1920x1080-px-barn-clouds-crop-farm-fields-grass-landscapes-Rustic-sky-1690913.jpg"},
-    {localizacao:"Cacuaco",dimensao:"14x13",preco:"1299",tipo:"Fazendo",image:"https://www.coffeemaxgreen.com/wp-content/uploads/2019/12/INSTITUCIONAL-MCMIAKI-COFFEE-191.jpg"},
-    {localizacao:"Zango",dimensao:"14x13",preco:"1500",tipo:"Terrono",image:"https://www.coffeemaxgreen.com/wp-content/uploads/2019/12/INSTITUCIONAL-MCMIAKI-COFFEE-191.jpg"},
-    {localizacao:"Huambo",dimensao:"50x50",preco:"1299",tipo:"Terreno",image:"https://www.coffeemaxgreen.com/wp-content/uploads/2019/12/INSTITUCIONAL-MCMIAKI-COFFEE-191.jpg"},
-
-  ]
   function buscarPorCategora(value){
     setCategoria(value);
   }
 
 
-  const Produto=(categoria)=>{
-      switch (categoria){
-        case "1":{
-         return (listaDeCarro.map((car,index)=>(
-            <NewCardCarro
-            key={index}
-            image={car.image}
-            nomeDoCarro={car.nomeDoCarro}
-            price={car.price}
-            tipoCombustivel={car.tipoCombustivel}
-            tipoDefreio={car.tipoDefreio}
-            tipoMotor={car.tipoMotor}
-            />
-          )))
-        }
-
-      }
-
-
-  }
 
 
   return <>
@@ -118,7 +93,7 @@ export const Home = () => {
       <Container>
         <div style={{width:"100%"}} >
         <ContainerTitle>
-        <h2 >Nossos produtos</h2>
+        <h2   >Nossas intermediações</h2>
         </ContainerTitle>
         <ContainerFiltro>
           Filtro
@@ -190,23 +165,40 @@ export const Home = () => {
 
 
       {
-        ListDeFazendaTerreno.map((produto,index)=>(
+        categoria==="Terreno"&&  fazendas.map((produto,index)=>(
           <NewCardTerrenoFazenda
             key={index}
             dimensao={produto.dimensao}
-            image={produto.image}
+            image={`http://127.0.0.1:3000/uploads/fazendas/${produto.image.map(images => images)[0]}`}
             localizacao={produto.localizacao}
-            preco={produto.preco}
+            preco={produto.price}
             tipo={produto.tipo}
-
+            id={produto._id}
+            status={produto.status}
           />
         ))
 
       }
       {
-        listaDeCarro.map((car,index)=>(
+       categoria==="Imovel" && imoveis.map((imovel,index)=>(
+          <NewCardImovel
+          area={imovel.area}
+          id={imovel._id}
+          image={`http://127.0.0.1:3000/uploads/imoveis/${imovel.image.map(images => images)[0]}`}
+          localizacao={imovel.localizacao}
+          nomeDoImovel={imovel.nomeDoImovel}
+          preco={imovel.preco}
+          status={imovel.status}
+          tipo={imovel.tipo}
+          key={imovel._id}
+          
+          />
+        ))
+      }
+      {
+       categoria ==="Carro" && listaDeCarro.map((car,index)=>(
           <NewCardCarro
-          image={car.image}
+          image={`http://127.0.0.1:3000/uploads/carros/${car.image.map(images => images)[0]}`}
           nomeDoCarro={car.nomeDoCarro}
           price={car.price}
           tipoCombustivel={car.tipoCombustivel}
@@ -232,12 +224,11 @@ export const Home = () => {
       </Container>
     </Fade>
     
-        <Link to={"/carros"} >
-        <button className="button-link  p-2 bg-gray-500 text-white rounded-lg ">
-        Carros
-        </button>
-        </Link>
-      <Link>Fazenda e Terreno </Link>
+      <div  className="flex justify-center items-center gap-3 mb-6 mt-3   " >
+      <Link to={"/carros"} className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  "  style={{background:"#1561fb",}}  >Carros</Link>
+      <Link to={"/terras"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  "  style={{background:"#1561fb",}}    >Terreno </Link>
+      <Link to={"/imoveis"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  "  style={{background:"#1561fb",}} >Terreno</Link>
+      </div>
       
 
     <Container>
