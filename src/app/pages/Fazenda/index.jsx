@@ -125,7 +125,7 @@ export default function PageFazenda() {
 
                             fazendas.slice(0, quantidadeExibida).map((produdo, index) => (
                                 <NewCardTerrenoFazenda
-                                    image={`http://127.0.0.1:3000/uploads/fazendas/${produdo.image.map(images => images)[0]}`}
+                                    image={`https://api-chinua.onrender.com/uploads/fazendas/${produdo.image.map(images => images)[0]}`}
                                     dimensao={produdo.dimensao}
                                     localizacao={produdo.localizacao}
                                     preco={produdo.price}

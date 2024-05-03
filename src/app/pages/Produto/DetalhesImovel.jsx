@@ -121,7 +121,7 @@ export default function ProductDetailsImovel() {
         >
             {listaImage && listaImage.map((img, index) => (
                 <div key={index} className="flex items-center justify-center rounded  ">
-                    <img src={`http://127.0.0.1:3000/uploads/imoveis/${img}`} style={{
+                    <img src={`https://api-chinua.onrender.com/uploads/imoveis/${img}`} style={{
                       width:"100%",
                       borderRadius:8
                       

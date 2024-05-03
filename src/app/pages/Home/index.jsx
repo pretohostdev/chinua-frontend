@@ -199,7 +199,7 @@ export const Home = () => {
       {
        categoria ==="Carro" && listaDeCarro.map((car,index)=>(
           <NewCardCarro
-          image={`http://127.0.0.1:3000/uploads/carros/${car.image.map(images => images)[0]}`}
+          image={`https://api-chinua.onrender.com/uploads/carros/${car.image.map(images => images)[0]}`}
           nomeDoCarro={car.nomeDoCarro}
           price={car.price}
           tipoCombustivel={car.tipoCombustivel}
