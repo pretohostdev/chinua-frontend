@@ -30,16 +30,16 @@ const {login}=useContext(UserContext)
 
     <form  onSubmit={handleSubmit} className="w-96   mx-auto max-w-md space-y-2 rounded-lg border p-8 shadow-md">
       <fieldset className="space-y-1">
-        <Label htmlFor="name">Email</Label>
+        <Label >Email</Label>
         <div className="relative">
-          <Input  value={email} onChange={(e)=>setEmail(e.target.value)}  placeholder="Enter email" className="ps-11" />
+          <Input type='email'  value={email} onChange={(e)=>setEmail(e.target.value)}  placeholder="Enter email" className="ps-11" />
           
         </div>
       </fieldset>
       <fieldset className="space-y-1">
-        <Label htmlFor="password">Senha</Label>
+        <Label >Senha</Label>
         <div className="relative">
-          <Input id="password"   value={senha} onChange={(e)=>setSenha(e.target.value)} autoComplete='curren-password' placeholder="************" type="password" className="ps-11" />
+          <Input   id="password"   value={senha} onChange={(e)=>setSenha(e.target.value)} autoComplete='curren-password' placeholder="************" type="password" className="ps-11" />
           
         </div>
       </fieldset>

@@ -37,7 +37,7 @@ export const FormAtualizarImovel = ({idProduto}) => {
             const data={
                 nomeDoImovel:inputImovel.current.value,
                 area:inputArea.current.value,
-                descricao:inputPreco.current.value,
+                preco:inputPreco.current.value,
                 tipo:inputTipo.current.value,
                 localizacao:inputLocalizacao.current.value,
                 status:inputStatus.current.value,
