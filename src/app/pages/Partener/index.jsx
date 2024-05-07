@@ -15,8 +15,8 @@ export const Partener = () => {
   const partners = [
     { name: 'MJS BUSINESS  GROUP', image: LogoMJS,link:"#" },
     { name: 'GRUPO GDX', image: LogoGDX ,link:"#"},
-    { name: 'DICISÕES & SOLUÇÕES', image: LogoDECISOESESOLUCOES,link:"#" },
-    { name: 'BNT TECH Oil And Gas Services', image: LogoBNPTECH,link:"#" },
+    { name: 'DECISÕES & SOLUÇÕES', image: LogoDECISOESESOLUCOES,link:"#" },
+    { name: 'BNP TECH Oil And Gas Services', image: LogoBNPTECH,link:"#" },
     { name: 'BADM', image: LogoBADM,link:"#" },
     { name: 'B.B.DEV', image: LogoBBDEV,link:"#" },
     { name: 'LATIFA LDA', image: TATIFA,link:"#" },

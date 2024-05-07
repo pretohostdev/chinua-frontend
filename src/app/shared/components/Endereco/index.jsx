@@ -3,6 +3,7 @@ import { FaAt, FaMapMarkedAlt, FaPhoneAlt } from 'react-icons/fa';
 
 import styled from 'styled-components';
 import dark from '../../styles/theme/dark';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     width: 20%;
@@ -61,6 +62,7 @@ const EnderecoStyle = styled.div`
 `
 const Enderecos = (props) => {
     return (
+        <Link  to={props.path} target='_blank' >
         <EnderecoStyle>
             {props.icon}
             <div className="endereco">
@@ -72,6 +74,7 @@ const Enderecos = (props) => {
                 </span>
             </div>
         </EnderecoStyle>
+        </Link>
     )
 }
 
@@ -81,17 +84,20 @@ const enderecos = [
     {
         icon: <FaMapMarkedAlt />,
         title: 'Viana',
-        name: 'Luanda-Sul'
+        name: 'Luanda-Sul',
+        path:"https://maps.app.goo.gl/Siq9GiU4DMNLL9Ud9",
     },
     {
         icon: <FaPhoneAlt />,
         title: 'Telefone',
-        name: '+244 939 593 385'
+        name: '+244 939 593 385',
+        path:"https://wa.me/+244923845779"
     },
     {
         icon: <FaAt />,
         title: 'E-mail',
-        name: 'geral@chinuandembo.ao'
+        name: 'geral@chinuandembo.ao',
+        path:"https://criarmeulink.com.br/u/1715079851"
     }
 ]
 
@@ -101,7 +107,7 @@ function Endereco() {
         <Container>
             {
                 enderecos.map((endereco, index)=>(
-                    <Enderecos key={index} icon={endereco.icon} title={endereco.title} name={endereco.name} />
+                    <Enderecos key={index} icon={endereco.icon} title={endereco.title} name={endereco.name} path={endereco.path} />
                 ))
             }
         </Container>
