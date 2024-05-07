@@ -38,13 +38,13 @@ const Card = styled.div`
 `;
 
 const PartnerCard = ({ partner }) => (
-    <Fade    delay={1e3} cascade damping={1e-1}>
+   
    
   <Card>
     <h2>{partner.name}</h2>
     <img src={partner.image} alt={partner.name} />
   </Card>
-    </Fade>
+   
 );
 
 export default PartnerCard;

@@ -32,6 +32,9 @@ export default function ProductDetailsFazenda() {
   Olá, estou interessado em *comprar/alugar* uma Fazenda ou Terreno da Chinua, 
   especificamente  tipo *${fazenda.tipo}*    com  nome: *${fazenda.tipo}* com referência: *${IDproduto}*.
   Gostaria de saber mais detalhes sobre disponibilidade e condições.Agradeço desde já pela atenção.
+
+
+  *Link*:http://localhost:5173/produto/detalhes/${IDproduto}
   `
 
   
@@ -160,7 +163,7 @@ export default function ProductDetailsFazenda() {
 
 
         <ContainerFazerPedido>
-          <a  href={`https://api.whatsapp.com/send?phone=+244939593385&text=${message}`}  >Fazer Pedido</a>
+          <a  href={`https://api.whatsapp.com/send?phone=+244923845779&text=${message}`}  >Fazer Pedido</a>
         </ContainerFazerPedido>
         
         

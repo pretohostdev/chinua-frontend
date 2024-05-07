@@ -7,10 +7,11 @@ export const Container = styled.button`
     background-color: ${props => props.theme == 'primary' ? `${dark.aux}` : `unset`};
     color: ${props => props.theme == 'primary' ? `${dark.text};` : `${dark.text};`};
     border:  ${props => props.theme == 'secondary' ? `1px solid ${dark.aux}` : `unset`};
-    width: 140px;
+    width: 150px;
     font-weight: 400;
     cursor: pointer;
     transition: all 0.4s;
+    margin:1px 1px;
     z-index: 20;
     &:hover {
       padding-left: 1.6rem;

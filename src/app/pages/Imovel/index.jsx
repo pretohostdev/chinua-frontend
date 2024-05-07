@@ -4,6 +4,8 @@ import { NavBar } from "../../shared/components/NavBar/index.jsx";
 import Carousel from "react-multi-carousel";
 import { UserContext } from "../../context/UserContext.jsx";
 import { NewCardImovel } from "../../shared/components/Card/CardImovel.jsx";
+import { Container } from "../Home/styles.js";
+import Contacto from "../../shared/components/Contacto/index.jsx";
 
 const API = import.meta.env.API_LOCAL
 
@@ -93,13 +95,13 @@ export default function PageImovel() {
 
                         <div className="w-full flex   flex-col items-center justify-center bg-cover bg-center h-screen" style={{ backgroundImage: "url('https://mebel-complect.ru/wp-content/uploads/a/8/f/a8f330889c2bd86212261e424a9e0d7c.jpeg')", height: 700 }}>
                             <div className="flex justify-center items-center  flex-col ">
-                                <h3 className="text-6xl font-medium text-yellow-50">Encontra os melhores imoveis  Chinua Dembo</h3>
+                                <h3 className="text-6xl font-medium text-yellow-50">Encontra os melhores imoveis  Chinua Ndembo</h3>
                                 <p className="text-3xl text-yellow-500">Líderes em intermediações de imoveis em toda Angola</p>
                             </div>
                         </div>
                         <div className="w-full flex   flex-col items-center justify-center bg-cover bg-center h-screen" style={{ backgroundImage: "url('https://gallery.forum-grad.ru/files/4/6/3/5/8/residence-cf-by-pupo-gaspar-48.jpg')", height: 700 }}>
                             <div className="flex justify-center items-center  flex-col ">
-                                <h3 className="text-6xl font-medium text-yellow-50">Grandes imoveis é na Chinua Dembo</h3>
+                                <h3 className="text-6xl font-medium text-yellow-50">Grandes imoveis é na Chinua Ndembo</h3>
                                 <p className="text-3xl text-yellow-500">Somos lideres em imoveis</p>
                             </div>
                         </div>
@@ -142,7 +144,7 @@ export default function PageImovel() {
                         {
                             imoveis.length === 0 && (
                                 <div className="w-full h-screen  bg-slate-400 mt-8 rounded  mx-5  flex  justify-center items-center"   >
-                                    <h3 className="text-white  font-bold  text-4xl " >Por enquanto não existe nenhum imoveil resgistrada</h3>
+                                    <h3 className="text-white  font-bold  text-4xl " >Por enquanto não existe nenhum imovel resgistrado</h3>
                                 </div>
                             )
                         }
@@ -150,6 +152,15 @@ export default function PageImovel() {
 
 
                 </div>
-            </div></>
+            </div>
+            
+            <Container>
+      <div className="container">
+        <Contacto />
+      </div>
+    </Container>
+
+            
+            </>
     )
 }

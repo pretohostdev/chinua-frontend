@@ -6,7 +6,7 @@ export const Logo = ({urlLogo}) => {
 
     return <Container  className='logo_'>
         <div className="ghost"></div>
-        <Link>
+        <Link to={"/"} >
             <h1>
                 <img src={urlLogo?urlLogo:logoOficial} alt='Logotipo Oficial' rel='noreferred' />
             </h1>

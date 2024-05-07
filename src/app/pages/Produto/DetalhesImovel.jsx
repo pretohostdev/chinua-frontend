@@ -37,6 +37,10 @@ export default function ProductDetailsImovel() {
   Olá, estou interessado em *comprar/alugar* um Imovel da Chinua, 
   especificamente  tipo *${imovel.tipo}*    com  nome: *${imovel.nomeDoImovel}* com referência: *${IDproduto}*.
   Gostaria de saber mais detalhes sobre disponibilidade e condições.Agradeço desde já pela atenção.
+  
+
+
+  *Link*:http://localhost:5173/produto/detalhes/${IDproduto}
   `
 
   return (
@@ -165,7 +169,7 @@ export default function ProductDetailsImovel() {
 
 
         <ContainerFazerPedido>
-          <a href={`https://api.whatsapp.com/send?phone=+244939593385&text=${message}`} >Fazer Pedido</a>
+          <a href={`https://api.whatsapp.com/send?phone=+244923845779&text=${message}`} >Fazer Pedido</a>
         </ContainerFazerPedido>
         
         

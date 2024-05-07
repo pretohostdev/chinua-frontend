@@ -5,6 +5,8 @@ import { NavBar } from "../../shared/components/NavBar/index.jsx";
 
 import Carousel from "react-multi-carousel";
 import { UserContext } from "../../context/UserContext.jsx";
+import { Container } from "../Home/styles.js";
+import Contacto from "../../shared/components/Contacto/index.jsx";
 
 const API = import.meta.env.API_LOCAL
 export default function PageCarro() {
@@ -92,13 +94,13 @@ export default function PageCarro() {
 
 <div className="w-full flex   flex-col items-center justify-center bg-cover bg-center h-screen" style={{backgroundImage: "url('https://avtovesti.com/wp-content/uploads/2023/03/756784495180107.jpg')",height:700}}>
     <div className="flex justify-center items-center  flex-col ">
-        <h3 className="text-6xl font-medium text-yellow-50">Todos os carros da Chinua Dembo</h3>
+        <h3 className="text-6xl font-medium text-yellow-50">Todos os carros da Chinua Ndembo</h3>
         <p className="text-3xl text-yellow-500">Líderes em intermediações de carro em toda Angola</p>
     </div>
 </div>
 <div className="w-full flex   flex-col items-center justify-center bg-cover bg-center h-screen" style={{backgroundImage: "url('https://w.forfun.com/fetch/14/140b2640c898cb479ff8a9c00fc4bd68.jpeg')",height:700}}>
     <div className="flex justify-center items-center  flex-col ">
-        <h3 className="text-6xl font-medium text-yellow-50">Grandes marcas é na Chinua Dembo</h3>
+        <h3 className="text-6xl font-medium text-yellow-50">Grandes marcas é na Chinua Ndembo</h3>
         <p className="text-3xl text-yellow-500">Somos lideres em vendas de carros</p>
     </div>e
 </div>
@@ -137,10 +139,27 @@ export default function PageCarro() {
                                 />
                             ))
                         }
+
+
+                        {
+                            listaDeCarro.length === 0 && (
+                                <div className="w-full h-screen  bg-slate-400 mt-8 rounded  mx-5  flex  justify-center items-center"   >
+                                    <h3 className="text-white  font-bold  text-4xl " >Por enquanto não existe nenhum fazenda ou terreno resgistrado</h3>
+                                </div>
+                            )
+                        }
                     </div>
 
 
                 </div>
-            </div></>
+            </div>
+            
+            <Container>
+      <div className="container">
+        <Contacto />
+      </div>
+    </Container>
+
+            </>
     )
 }

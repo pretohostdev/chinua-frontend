@@ -28,10 +28,10 @@ export const Partener = () => {
 
   <ContainerListPartner>
       <div  style={{marginTop:20}}>
-      <h2>
-  <Fade delay={1e3} cascade damping={1e-1}>
+      <h2 style={{fontSize:32}} >
+ 
        Nossos Parceiros
-  </Fade>
+
        </h2>
       </div>
     <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexWrap:"wrap"}} >

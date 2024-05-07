@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 
 
 const CiteStyle = styled.div`
+    
     position: relative;
     display: flex;
     flex-direction: column;
@@ -29,7 +30,7 @@ const CiteStyle = styled.div`
         z-index: 100;
     }
     button{
-        @media screen and (max-width: 600px){
+        @media screen and (max-width: 700px){
            color: ${dark.text};
            background-color: ${dark.aux};
         }
@@ -86,71 +87,15 @@ const Cite = () => {
             <Text />
             <p>
                 Lider em intermediações <br />
-                Carros | Fazendas | Imoveis
             </p>
+            
 
-            <div style={{position:"relative", width:300}} >
+            <div style={{position:"relative", width:400,gap:5}} >
 
-            <Carousel
-             additionalTransfrom={0}
-             arrows={false}
-             autoPlay
-             autoPlaySpeed={3000}
-             centerMode={false}
-             className=""
-             containerClass="container-with-dots"
-             dotListClass=""
-             draggable
-             focusOnSelect={false}
-             infinite
-             itemClass=""
-             keyBoardControl
-             minimumTouchDrag={80}
-             pauseOnHover
-             renderArrowsWhenDisabled={false}
-             renderButtonGroupOutside={false}
-
-        
-             
-             renderDotsOutside={false}
-             responsive={{
-               desktop: {
-                 breakpoint: {
-                   max: 3000,
-                   min: 1024
-                 },
-                 items: 1,
-                 partialVisibilityGutter: 0
-               },
-               mobile: {
-                 breakpoint: {
-                   max: 464,
-                   min: 0
-                 },
-                 items: 1,
-                 partialVisibilityGutter: 0
-               },
-               tablet: {
-                 breakpoint: {
-                   max: 1024,
-                   min: 464
-                 },
-                 items: 1,
-                 partialVisibilityGutter: 0
-               }
-             }}
-             rewind={false}
-             rewindWithAnimation={false}
-             rtl={false}
-             shouldResetAutoplay
-             showDots={false}
-             sliderClass=""
-             slidesToSlide={1}
-             swipeable
-            >
-            <Button theme='secondary'>
+            
+            <Button   theme='secondary'>
                 <Link to={"/carros"}>
-                Carros
+                Automóveis 
                 </Link>
             </Button>
             <Button theme='secondary'>
@@ -163,8 +108,14 @@ const Cite = () => {
                 Imoveis
                 </Link>
             </Button>
-            </Carousel>
+            <Button theme='secondary'>
+                <Link to={"/imoveis"}>
+                Maquinarias
+                </Link>
+            </Button>
+         
             </div>
+
         </CiteStyle>
     );
 }
@@ -174,7 +125,7 @@ export const CiteContainer = () => {
         <Container>
             <Cite />
             <Slides />
-
+            
         </Container>
     );
 }

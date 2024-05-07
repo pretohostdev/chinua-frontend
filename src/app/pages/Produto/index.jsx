@@ -163,7 +163,7 @@ export default function ProductDetails() {
 
 
         <ContainerFazerPedido>
-          <a  href={`https://api.whatsapp.com/send?phone=+244923000143&text=${message}`} >Fazer Pedido</a>
+          <a  href={`https://api.whatsapp.com/send?phone=+244923845779text=${message}`} >Fazer Pedido</a>
         </ContainerFazerPedido>
         
         

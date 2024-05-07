@@ -90,7 +90,7 @@ const enderecos = [
     {
         icon: <FaPhoneAlt />,
         title: 'Telefone',
-        name: '+244 939 593 385',
+        name: '+244 923 845 779',
         path:"https://wa.me/+244923845779"
     },
     {

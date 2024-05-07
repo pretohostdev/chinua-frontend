@@ -272,9 +272,9 @@ function FooterContainer() {
             <Logo />
             <Services services={services} />
           </div>
-            <Enderecos enderecos={enderecos} />
+            {/* <Enderecos enderecos={enderecos} /> */}
           
-            <Menus menus={menus} />
+          {/* {  <Menus menus={menus} />} */}
           
         </div>
       </div>

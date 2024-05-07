@@ -39,16 +39,17 @@ const StyleHome = styled.div`
 
 
 export const Home = () => {
-  const [categoria,setCategoria]=useState("Carro");
+  const [categoria,setCategoria]=useState("Automóveis");
   const{listaDeCarro,buscarTodosCarros,
     fazendas,buscarTodasAsFazendas,
     imoveis,buscarTodosImoveis
   }=useContext(UserContext)
   
+
   const listCategoria=[
       {categoria:"Imovel"},
       {categoria:"Terreno"},
-      {categoria:"Carro"},
+      {categoria:"Automóveis"},
   ]
 
 
@@ -79,23 +80,25 @@ export const Home = () => {
       </Container>
     </Fade>
 
-    <Fade direction="top-left">
-      <Container>
-          <CompanyList/>
-      </Container>
-    </Fade>
+   
 { /*   <Fade direction="left">
       <Container>
         <Sobre />
       </Container>
     </Fade>
 */}
-    <Fade direction="left">
+
+   
       <Container>
         <div style={{width:"100%"}} >
         <ContainerTitle>
         <h2   >Nossas intermediações</h2>
         </ContainerTitle>
+<div  className="flex justify-center items-center gap-3 mb-6 mt-3   " >
+      <Link to={"/carros"} className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent", border:"1px solid #daa520",  }}  >Página de Automóveis</Link>
+      <Link to={"/terras"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500 "  style={{background:"tranparent",border:"1px solid #daa520", }}    >Página de Terrenos </Link>
+      <Link to={"/imoveis"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Página de Imoveis </Link>
+      </div>
         <ContainerFiltro>
           Filtro
           <select value={categoria}  onChange={(e)=>buscarPorCategora(e.target.value)} >
@@ -197,7 +200,7 @@ export const Home = () => {
         ))
       }
       {
-       categoria ==="Carro" && listaDeCarro.map((car,index)=>(
+       categoria ==="Automóveis" && listaDeCarro.map((car,index)=>(
           <NewCardCarro
           image={`https://api-chinua.onrender.com/uploads/carros/${car.image.map(images => images)[0]}`}
           nomeDoCarro={car.nomeDoCarro}
@@ -214,23 +217,17 @@ export const Home = () => {
         
  
 </Carousel>
-       {/* <ContainerButtonProduto>
-          <div>
-            <button>&larr;</button>
-            <button>&rarr;</button>
-          </div>
-</ContainerButtonProduto>*/}
         </div>
         
       </Container>
-    </Fade>
+
     
-      <div  className="flex justify-center items-center gap-3 mb-6 mt-3   " >
-      <Link to={"/carros"} className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent", border:"1px solid #daa520",  }}  >Página de Carros</Link>
-      <Link to={"/terras"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500 "  style={{background:"tranparent",border:"1px solid #daa520", }}    >Página de Terrenos </Link>
-      <Link to={"/imoveis"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Página de Imoveis </Link>
-      </div>
-      
+      <ContainerTitle>
+        <h2   >Outros sectores da Chinua Ndembo</h2>
+        </ContainerTitle>
+      <Container>
+              <CompanyList/>
+          </Container>
 
     <Container>
       <div  id="about" className="container">
@@ -250,14 +247,14 @@ export const Home = () => {
 
 
 
-<scroll>
 
-    <Fade cascade>
+
+
       <Container  id="Parceiro" >
         <Partener/>
       </Container>
-    </Fade>
-</scroll>
+ 
+
 
     <Container>
     <Team/>
@@ -268,7 +265,10 @@ export const Home = () => {
         <Contacto />
       </div>
     </Container>
+    
 
+    
+    
     
   </>
 }

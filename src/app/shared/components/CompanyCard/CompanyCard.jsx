@@ -26,9 +26,7 @@ export  function CompanyList() {
       justifyContent:"center",
       alignItems:"center"
      }}  >
-     <div className="flex justify-center items-center mt-6"  >
-          <h2  className="text-white font-medium text-3xl mt-6" >Outros sectores da Chinua Dembo</h2>
-     </div>
+
       <CompanyListContent>
        {listCompany.map(company => (
         <Card key={company.name} name={company.name} image={company.image} path={company.path} />
