@@ -19,9 +19,15 @@ export  function CompanyList() {
     ]
     return (
      <>
-     <div>
-     <div className="flex justify-center items-center mt-4"  >
-          <h2  className="text-white font-medium text-3xl" >Outros sectores da Chinua Dembo</h2>
+     <div   style={{
+      width:"100%",
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"center",
+      alignItems:"center"
+     }}  >
+     <div className="flex justify-center items-center mt-6"  >
+          <h2  className="text-white font-medium text-3xl mt-6" >Outros sectores da Chinua Dembo</h2>
      </div>
       <CompanyListContent>
        {listCompany.map(company => (

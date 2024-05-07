@@ -26,12 +26,12 @@ margin: 0px 40px;
 `;
 
 export const CompanyListContent = styled.div`
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content:space-between;
   align-items: center;
   gap: 20px;
 
-  margin: 25px 0px;
+  margin: 30px 0px;
 `;
