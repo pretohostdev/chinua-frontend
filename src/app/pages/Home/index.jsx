@@ -95,9 +95,11 @@ export const Home = () => {
         <h2   >Nossas intermediações</h2>
         </ContainerTitle>
 <div  className="flex justify-center items-center gap-3 mb-6 mt-3   " >
-      <Link to={"/carros"} className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent", border:"1px solid #daa520",  }}  >Página de Automóveis</Link>
-      <Link to={"/terras"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500 "  style={{background:"tranparent",border:"1px solid #daa520", }}    >Página de Terrenos </Link>
-      <Link to={"/imoveis"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Página de Imoveis </Link>
+      <Link to={"/carros"} className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent", border:"1px solid #daa520",  }}  >Automóveis</Link>
+      <Link to={"/terras"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500 "  style={{background:"tranparent",border:"1px solid #daa520", }}    >Terrenos </Link>
+      <Link to={"/imoveis"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Imoveis </Link>
+      <Link to={"#/"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Maquinarias</Link>
+      <Link to={"#/"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Consultoria Multidisciplinar</Link>
       </div>
         <ContainerFiltro>
           Filtro
