@@ -89,7 +89,7 @@ export const Home = () => {
 */}
 
    
-      <Container>
+      <Container> 
         <div style={{width:"100%"}} >
         <ContainerTitle>
         <h2   >Nossas intermediações</h2>
@@ -242,16 +242,6 @@ export const Home = () => {
         <Galeria />
       </Container>
     </Fade>
-
-
-
-  
-
-
-
-
-
-
       <Container  id="Parceiro" >
         <Partener/>
       </Container>

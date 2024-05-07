@@ -47,7 +47,7 @@ export const Nav=(props)=> {
         </ListItem> 
 
         <ListItem>
-          <NavLink target="#Parceiro" to="/" children  >
+          <NavLink target="/#Parceiro" to="/" children  >
             <a   href="#Parceiro" target="#Parceiro"  >Parceiro</a>
           </NavLink>
        
