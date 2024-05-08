@@ -41,7 +41,7 @@ export const FormAtualizarFazenda = ({idProduto}) => {
           .then((response)=>{
                 console.log(response.data);
                 alert(`${inputTipo.current.value} atualizado com sucesso!`);
-                window.location.href="/login"
+                // window.location.href="/login"
           })
         } catch (error) {
             console.log(error)

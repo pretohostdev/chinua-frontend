@@ -99,7 +99,7 @@ export const Home = () => {
       <Link to={"/terras"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500 "  style={{background:"tranparent",border:"1px solid #daa520", }}    >Terrenos </Link>
       <Link to={"/imoveis"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Imoveis </Link>
       <Link to={"#/"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Maquinarias</Link>
-      <Link to={"#/"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Consultoria Multidisciplinar</Link>
+      <Link to={"/consultoria"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Consultoria Multidisciplinar</Link>
       </div>
         <ContainerFiltro>
           Filtro

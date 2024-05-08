@@ -21,9 +21,9 @@ import PageFazenda from "../../pages/Fazenda/index.jsx";
 import ProductDetailsFazenda from "../../pages/Produto/DetalhesFazenda.jsx";
 import PageImovel from "../../pages/Imovel/index.jsx";
 import ProductDetailsImovel from "../../pages/Produto/DetalhesImovel.jsx";
-const App = () => {
+import Consultoria from "../../pages/Consultoria/index.jsx";
 
-  
+const App = () => {
   return (
     <>
       <GlobalStyle theme={dark} />
@@ -42,10 +42,6 @@ const App = () => {
 export default function RoutesApp(){
   
   const {cookies}=useContext(UserContext)
-
-
-
-
    const router = createBrowserRouter([
     {
       path: "/",
@@ -77,6 +73,9 @@ export default function RoutesApp(){
         {
           path:"/imoveis",
           element:<PageImovel/>
+        },{
+          path:"/consultoria",
+          element:<Consultoria/>
         }
 
       ],

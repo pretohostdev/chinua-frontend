@@ -39,22 +39,22 @@ export const Nav=(props)=> {
   duration={500}
 >
   <ListItem>
-  <NavLink target="#Parceiro" to="/" children  >
-            <a   href="#sobre" target="#Parceiro"  >Sobre</a>
+  <NavLink target="#sobre" to="/" children  >
+            <a   href="#sobre" target="_parent"  >Sobre</a>
           </NavLink>
   </ListItem>
     </LinkA>
         </ListItem> 
 
         <ListItem>
-          <NavLink target="/#Parceiro" to="/" children  >
-            <a   href="#Parceiro" target="#Parceiro"  >Parceiro</a>
+          <NavLink target="#Parceiro" to="/" children  >
+            <a   href="#Parceiro" target="_parent"  >Parceiro</a>
           </NavLink>
-       
+
         </ListItem> 
         <ListItem>
-        <NavLink target="#Parceiro" to="/" children  >
-            <a   href="#contact" target="_self"  >Contacto</a>
+        <NavLink target="#contact" to={"#"}  children  >
+            <a   href="#contact" >Contacto</a>
           </NavLink>
          
         </ListItem> 

@@ -40,6 +40,8 @@ export const FormFazendaTerreno = ()=>{
             console.log(inputTipo.current.value);
             console.log(inputLocalizacao.current.value);
             registarFazenda(formData)
+
+            alert("Produto cadastrado com sucesso")
             
         } catch (error) {
             alert("Não foi possivel cadastrar a fazenda ou tera")
