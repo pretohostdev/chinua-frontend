@@ -108,9 +108,9 @@ export default function PageImovel() {
                     </Carousel>
 
                     <div className="flex   gap-3 items-center justify-end  flex-row  mt-4 px-2">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(5)}>Exibir 5 Imoveis</button>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(10)}>Exibir 10 Imoveis</button>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(imoveis.length)}>Todos os Imoveis</button>
+                        <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white  font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(5)}>Exibir 5 Imoveis</button>
+                        <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white  font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(10)}>Exibir 10 Imoveis</button>
+                        <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(imoveis.length)}>Todos os Imoveis</button>
 
                     </div>
 
