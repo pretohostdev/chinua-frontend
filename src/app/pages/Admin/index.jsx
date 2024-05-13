@@ -23,7 +23,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { FormAtualizarCarro  } from "./FormsAtualizar/Carro.jsx";
 import { FormAtualizarFazenda } from "./FormsAtualizar/Fazenda.jsx";
 import { FormAtualizarImovel } from "./FormsAtualizar/Imovel.jsx";
-
+import {FormAtualizarMaquinaria} from "./FormsAtualizar/Maquinaria.jsx"
 
 export default function Admin() {
 
@@ -76,9 +76,10 @@ export default function Admin() {
                         <p className="font-bold">Menu</p>
                         <hr className="border-2 border-black mb-2" />
 
-                        <button className="bg-cyan-600 text-white font-bold py-2 px-4 rounded-lg mb-2" onClick={() => setForm(1)}>Carro</button>
+                        <button className="bg-cyan-600 text-white font-bold py-2 px-4 rounded-lg mb-2" onClick={() => setForm(1)}>Automoveis</button>
                         <button className="bg-green-600 text-white font-bold py-2 px-4 rounded-lg mb-2" onClick={() => setForm(2)}>Fazenda - Terreno</button>
                         <button className="bg-orange-600 text-white font-bold py-2 px-4 rounded-lg mb-2" onClick={() => setForm(3)}>Imovel</button>
+                        <button className="bg-cyan-700 text-white font-bold py-2 px-4 rounded-lg mb-2" onClick={() => setForm(4)}>Maquinarias</button>
 
 
                         <div  className="flex justify-center  mt-4" >
@@ -97,6 +98,9 @@ export default function Admin() {
                         {
                             form === 3 && (<FormImovel />)
                         }
+                        {
+                            form=== 4 &&(<FormMaquinaria/>)
+                        }
 
                         <ContainerFormUpdate>
                             <ContainerFormUpdateHeader>
@@ -106,12 +110,13 @@ export default function Admin() {
                             <ContainerFormUpdateContent>
                                     <ContainerFormLeft>
                                         <ContainerButtonSelecinar>
-                                            <button className="btn   text-cyan-50  font-normal px-4 mx-1 rounded "   style={{background:"#262626"}}   onClick={()=>setFormUpdate(1) }     >Carro</button>
+                                            <button className="btn   text-cyan-50  font-normal px-4 mx-1 rounded "   style={{background:"#262626"}}   onClick={()=>setFormUpdate(1) }     > Automoveis</button>
                                             <button className="btn   text-cyan-50  font-normal px-4 mx-1 rounded "   style={{background:"#262626"}}  onClick={()=>setFormUpdate(2) }   >Fazenda</button>
                                             <button className="btn   text-cyan-50  font-normal px-4 mx-1 rounded "   style={{background:"#262626"}}   onClick={()=>setFormUpdate(3) }   >Imovel</button>
+                                            <button className="btn   text-cyan-50  font-normal px-4 mx-1 rounded "   style={{background:"#262626"}}   onClick={()=>setFormUpdate(4) }   >Maquinaria</button>
                                         </ContainerButtonSelecinar>
                                         <ContainerBuscarProduto>
-                                            <input   value={idProduto} onChange={(e)=>setIdProduto(e.target.value)} type="text"   placeholder="REF DO PRODUTO" />
+                                            <input  className="input-search"   value={idProduto} onChange={(e)=>setIdProduto(e.target.value)} type="text"   placeholder="REF DO PRODUTO" />
                                             
                                         </ContainerBuscarProduto>
                                     </ContainerFormLeft>
@@ -123,6 +128,9 @@ export default function Admin() {
                                }
                                 {
                                 formUpdate === 3 &&(<FormAtualizarImovel idProduto={idProduto} />)
+                               }
+                                {
+                                formUpdate === 4 &&(<FormAtualizarMaquinaria idProduto={idProduto} />)
                                }
                             </ContainerFormUpdateContent>
 

@@ -45,7 +45,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-background: #e2e8f0;
+background: transparent;
 
 
 `

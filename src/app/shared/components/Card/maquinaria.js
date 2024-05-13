@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const ConatinerCardProduto=styled.div`
 width: 350px;
-height: 415px;
+height: 420px;
 border-radius: 10px;
 padding: 5px;
 margin: 2px 2px;
@@ -62,6 +62,7 @@ width:122px;
 height: 25px;
 
 
+border-bottom:2px solid #fbbf24;
 margin-top: 15px;
 padding: 2px;
 display: flex;

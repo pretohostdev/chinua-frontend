@@ -53,8 +53,8 @@ export const Nav=(props)=> {
 
         </ListItem> 
         <ListItem>
-        <NavLink target="#contact" to={"#"}  children  >
-            <a   href="#contact" >Contacto</a>
+        <NavLink target="#contact" to={"#contact"}  children  >
+            <a   href="#contact"  target="_top" >Contacto</a>
           </NavLink>
          
         </ListItem> 

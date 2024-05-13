@@ -14,7 +14,7 @@ export const Team=()=>{
         
 <ContainerTeam>
     <ContainerTitle>
-      <h3>Nosso Team</h3>
+      <h2>Nosso Team</h2>
     </ContainerTitle>
 
             

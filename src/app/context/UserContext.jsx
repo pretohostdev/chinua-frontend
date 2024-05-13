@@ -13,6 +13,7 @@ export default function UserContextApp({children}){
     const [listaDeCarro, setListaDeCarro] = useState([])
     const [fazendas, setFazendas] = useState([])
     const [imoveis, setImoveis] = useState([])
+    const [maquinarias, setMaquinarias] = useState([])
 
     const [user, setUser] = useState({});
 
@@ -49,6 +50,18 @@ export default function UserContextApp({children}){
                 setImoveis(imoveis);
             })
     }
+    async function buscarTodasMaquinarias(){
+        await api.get("/maquinaria/listar")
+            .then(async (response) => {
+                const maquinarias = await response.data;
+                setMaquinarias(maquinarias);
+            })
+            .catch((error)=>{
+   
+            console.log("erro ao listar as maquinarias",error)
+               
+            })
+    }
 
     function logout(){
         removeCookie("user",{path:"/"})
@@ -69,6 +82,23 @@ export default function UserContextApp({children}){
             console.log(response.data);
         })
         .catch(error => {
+            console.log(error);
+        })
+    }
+
+    async function registarMaquinaria(formData){
+        await api.post("/maquinaria/registar",formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            "authorization": "Bearer" + token
+        })
+        .then(response => {
+            console.log(response.data);
+            alert("Maquina regitrada com sucesso!")
+        })
+        .catch(error => {
+            alert(" Erro ao regitrar a maquinaria")
             console.log(error);
         })
     }
@@ -133,7 +163,10 @@ export default function UserContextApp({children}){
               registarFazenda,
               verificarUsuarioLogado,
               buscarTodosImoveis,imoveis,
-              registarImovel
+              registarImovel,
+              registarMaquinaria,
+              maquinarias,
+              buscarTodasMaquinarias
               }}>
 
             {children}

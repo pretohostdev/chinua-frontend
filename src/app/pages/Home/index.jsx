@@ -22,6 +22,7 @@ import { UserContext } from "../../context/UserContext.jsx"
 import { Team } from "../../shared/components/Team/index.jsx"
 import { NewCardImovel } from "../../shared/components/Card/CardImovel.jsx"
 import { Link } from "react-router-dom"
+import { CardMaquina } from "../../shared/components/Card/CardMaquinas.jsx"
 
 const StyleHome = styled.div`
   width: 100%;
@@ -42,7 +43,8 @@ export const Home = () => {
   const [categoria,setCategoria]=useState("Automóveis");
   const{listaDeCarro,buscarTodosCarros,
     fazendas,buscarTodasAsFazendas,
-    imoveis,buscarTodosImoveis
+    imoveis,buscarTodosImoveis,maquinarias,
+    buscarTodasMaquinarias
   }=useContext(UserContext)
   
 
@@ -50,6 +52,7 @@ export const Home = () => {
       {categoria:"Imovel"},
       {categoria:"Terreno"},
       {categoria:"Automóveis"},
+      {categoria:"Maquinarias"},
   ]
 
 
@@ -57,6 +60,8 @@ export const Home = () => {
     buscarTodosCarros();
     buscarTodasAsFazendas();
     buscarTodosImoveis()
+    buscarTodasMaquinarias()
+
   },[categoria])
 
 
@@ -213,6 +218,24 @@ export const Home = () => {
           key={index}
           id={car._id}
           status={car.status}
+          />
+        ))
+      }
+      {
+        categoria==="Maquinarias" && maquinarias.map((maquina,index)=>(
+          <CardMaquina
+            estadoDeConversao={maquina.estadoDeConversao}
+            id={maquina._id}
+            image={`http://127.0.0.1:3000/uploads/maquinas/${maquina.image.map(images => images)[0]}`}
+            nomeDaMaquinaria={maquina.nomeDaMaquinaria}
+            price={maquina.price}
+            status={maquina.status}
+            tipoCombustivel={maquina.tipoCombustivel}
+            tipoDeMaquinaria={maquina.tipoDeMaquinaria}
+            tipoDefreio={maquina.tipoDefreio}
+            tipoMotor={maquina.tipoMotor}
+            key={maquina._id}
+            
           />
         ))
       }

@@ -1,17 +1,16 @@
-import React, { useContext, useRef, useState } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 
-import {ContainerLabelInput,
-  ContainerLabelInputUploadImage, Form
+import {ContainerLabelInput, Form
 
 } from "../admin"
 import { UserContext } from "../../../context/UserContext"
+import api from "../../../core/api"
 
 
 
 
 
-export const FormMaquinaria = () => {
-const [files, setFiles] = useState([])
+export const FormAtualizarMaquinaria = ({idProduto}) => {
 const inputPrecoMaquina=useRef("")
 const inputTipoCombustivel=useRef("")
 const inputTipoMotor=useRef("")
@@ -19,72 +18,66 @@ const inputTipoFreio=useRef("")
 const inputTipoDeMaquinaria=useRef("")
 const inputEstadoDeConversao=useRef("")
 const inputNomeDaMaquinaria=useRef("")
+const inputStatus=useRef("")
 
-const {registarMaquinaria}=useContext(UserContext)
 
-  const handleSubmit = async (e) => {
+
+async function buscarProduto(ID){
+    const produto= await api.get(`/maquinaria/listar/${ID}`)
+    console.log(produto.data);
+   inputEstadoDeConversao.current.value=produto.data.estadoDeConversao;
+   inputNomeDaMaquinaria.current.value=produto.data.nomeDaMaquinaria;
+   inputPrecoMaquina.current.value=produto.data.price;
+   inputTipoCombustivel.current.value=produto.data.tipoCombustivel;
+   inputTipoMotor.current.value=produto.data.tipoMotor;
+   inputTipoFreio.current.value=produto.data.tipoDefreio;
+   inputTipoDeMaquinaria.current.value=produto.data.tipoDeMaquinaria;
+   inputStatus.current.value=produto.data.status;
+
+}
+
+useEffect(()=>{
+    buscarProduto(idProduto)
+},[idProduto])
+
+const handleSubmit = async (e) => {
     e.preventDefault()
-    
-
-    
-    
-    const formData = new FormData();
-
-
-
-    formData.append('price', inputPrecoMaquina.current.value);
-    formData.append('tipoCombustivel', inputTipoCombustivel.current.value);
-    formData.append('tipoMotor', inputTipoMotor.current.value);
-    formData.append('tipoDefreio', inputTipoFreio.current.value);
-    formData.append('tipoDeMaquinaria', inputTipoDeMaquinaria.current.value);
-    formData.append('estadoDeConversao', inputEstadoDeConversao.current.value);
-    formData.append('nomeDaMaquinaria', inputNomeDaMaquinaria.current.value);
-    
-
-    Object.values(files).forEach( (file) => {
-        formData.append('image', file);
-      });
-      
-      
-      
-      try {
-      console.log(inputPrecoMaquina.current.value)
-      console.log(inputTipoCombustivel.current.value)
-      console.log(inputTipoMotor.current.value)
-      console.log(inputTipoFreio.current.value)
-      registarMaquinaria(formData)
+    try {
+        const data={
+            nomeDaMaquinaria:inputNomeDaMaquinaria.current.value,
+            price:inputPrecoMaquina.current.value,
+            tipoCombustivel:inputTipoCombustivel.current.value,
+            estadoDeConversao:inputEstadoDeConversao.current.value,
+            tipoMotor:inputTipoMotor.current.value,
+            tipoDefreio:inputTipoFreio.current.value,
+            tipoDeMaquinaria:inputTipoDeMaquinaria.current.value,
+            status:inputStatus.current.value,
+        }
+      await api.put(`/maquinaria/atualizar/${idProduto}`,data)
+      .then((response)=>{
+            console.log(response.data);
+            alert(`${response.data.nomeDaMaquinaria} atualizado com sucesso!`);
+           
+      })
     } catch (error) {
-      console.log(error)
+        alert(error.response.data.message)
     }
+}
 
-
-
-  }
-
-  const setImage = (files) => {
-    setFiles(files)
-  }
 
 
   return (
     <>
       <Form onSubmit={handleSubmit}>
-                    <h2 className="font-bold text-2xl text-center mb-4 mt-4"  >Adicionar Maquinarias</h2>
-                        <ContainerLabelInputUploadImage>
-                            <label className="font-bold " >Imagens da Maquinaria</label>
-                            <input      type="file" accept="image/jpeg, image/png, image/gif"  name="uploadImages"  multiple   onChange={(e)=>setImage( e.target.files)}  />
-                        </ContainerLabelInputUploadImage>
-
+                    <h2 className="font-bold text-2xl text-center mb-4 mt-4"  >Atualizar Maquinarias</h2>
                        <ContainerLabelInput>
                             <label>Nome da maquinaria</label>
                             <input  ref={inputNomeDaMaquinaria} type="text" placeholder="" required={[true,"Nome do carro é necessário"]} />
                         </ContainerLabelInput>
                         <ContainerLabelInput>
                             <label>Preço da maquinaria</label>
-                            <input ref={inputPrecoMaquina} type="text" placeholder="" required />
+                            <input ref={inputPrecoMaquina} type="number" placeholder="" required />
                         </ContainerLabelInput>
-                  
-                       
                         <ContainerLabelInput>
                             <label>Tipo de combustível</label>
                            <select  ref={inputTipoCombustivel} id="fuel"  required>
@@ -124,10 +117,20 @@ const {registarMaquinaria}=useContext(UserContext)
                                 <option value="Freio EBD">Freio EBD</option>
 
                             </select>
+
                        </ContainerLabelInput>
+                       <ContainerLabelInput>
+                    <label>Estado</label>
+                    <select ref={inputStatus} id="status" required  >
+                        <option value="Vendido">Vendido</option>
+                        <option value="Disponivel">Disponivel</option>
+                        <option value="Alugado">Alugado</option>
+                  
+                    </select>
+                </ContainerLabelInput>
                        
                        
-                    <button type="submit" className="btn btn-primary" >Adicionar carro</button>
+                    <button type="submit" className="btn btn-primary" >Atualizar Maquinaria</button>
       </Form>
     </>
   )

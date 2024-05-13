@@ -18,9 +18,10 @@ margin-bottom: 25px;
 export const ContainerTitle=styled.div`
 
 
-h3{
-    font-size: 24px;
+h2{
+    font-size: 32px;
     color: #fff;
+    font-weight: 300;
 }
 
 `;

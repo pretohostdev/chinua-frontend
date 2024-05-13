@@ -109,7 +109,7 @@ const Cite = () => {
                 </Link>
             </Button>
             <Button theme='secondary'>
-                <Link to={"/imoveis"}>
+                <Link to={"/maquinarias"}>
                 Maquinarias
                 </Link>
             </Button>

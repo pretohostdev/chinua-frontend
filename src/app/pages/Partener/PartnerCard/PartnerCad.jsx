@@ -8,11 +8,11 @@ const Card = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #020617;
+    background: transparent;
     padding: 10px;
     margin: 10px;
     border-radius:10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 8px 2px rgba(0,0,0,0.9);
     margin-bottom: 20PX;
 
 
@@ -30,7 +30,7 @@ const Card = styled.div`
 
   h2{
     color: #fff;
-    font-weight:400;
+    font-weight:300;
     font-size: 18px;
     margin-top: 15px;
     margin-bottom: 10px;
