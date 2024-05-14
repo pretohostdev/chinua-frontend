@@ -114,4 +114,18 @@ h2{
     font-weight: 300;
     font-size: 32px;
 }
+
+@media (max-width: 768px) {
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    h2{
+    color: #fff;
+    font-weight: 200;
+    font-size: 24px;
+}
+
+}
+
+
 `;

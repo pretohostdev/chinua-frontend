@@ -1,7 +1,8 @@
 
 // import { Container } from './styles';
 
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, unstable_HistoryRouter } from "react-router-dom";
+
 import { Link as LinkA, animateScroll as scroll } from "react-scroll";
 
 <Link
@@ -16,8 +17,11 @@ import { Link as LinkA, animateScroll as scroll } from "react-scroll";
 </Link>
 import { ListItem } from "../ListItem";
 import { Container } from "./styles";
+import { useRef } from "react";
 
 export const Nav=(props)=> {
+
+
   return (
     <Container className={props.propClass}>
         <ListItem>
@@ -31,32 +35,24 @@ export const Nav=(props)=> {
         </ListItem> 
         <ListItem>
         <LinkA
-  activeClass="active"
-  to="about"
-  spy={true}
-  smooth={true}
-  offset={-70}
-  duration={500}
+  // activeClass="active"
+  // to="about"
+  // spy={true}
+  // smooth={true}
+  // offset={-70}
+  // duration={500}
 >
   <ListItem>
-  <NavLink target="#sobre" to="/" children  >
-            <a   href="#sobre" target="_parent"  >Sobre</a>
-          </NavLink>
+            <a   href="#about" target="#about"  >Sobre</a>
   </ListItem>
     </LinkA>
         </ListItem> 
 
         <ListItem>
-          <NavLink target="#Parceiro" to="/" children  >
-            <a   href="#Parceiro" target="_parent"  >Parceiro</a>
-          </NavLink>
-
+            <a   href="#Parceiro" target="#Parceiro"  >Parceiro</a>
         </ListItem> 
         <ListItem>
-        <NavLink target="#contact" to={"#contact"}  children  >
-            <a   href="#contact"  target="_top" >Contacto</a>
-          </NavLink>
-         
+            <a   href="#contact"  target="#contact" >Contacto</a>
         </ListItem> 
         <ListItem >
             <a href={` https://wa.me/+244923845779`} target="_blank" >+244 923 845 779</a>

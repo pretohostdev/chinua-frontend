@@ -99,13 +99,13 @@ export const Home = () => {
         <ContainerTitle>
         <h2   >Nossas intermediações</h2>
         </ContainerTitle>
-<div  className="flex justify-center items-center gap-3 mb-6 mt-3   " >
+<div  className="flex justify-center items-center gap-3 mb-6 mt-3 max-md:flex-wrap  " >
       <Link to={"/carros"} className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent", border:"1px solid #daa520",  }}  >Automóveis</Link>
       <Link to={"/terras"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500 "  style={{background:"tranparent",border:"1px solid #daa520", }}    >Terrenos </Link>
       <Link to={"/imoveis"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Imoveis </Link>
       <Link to={"#/"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Maquinarias</Link>
       <Link to={"/consultoria"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Consultoria Multidisciplinar</Link>
-      </div>
+</div>
         <ContainerFiltro>
           Filtro
           <select value={categoria}  onChange={(e)=>buscarPorCategora(e.target.value)} >
@@ -247,16 +247,22 @@ export const Home = () => {
       </Container>
 
     
-      <ContainerTitle>
-        <h2   >Outros sectores da Chinua Ndembo</h2>
+     
+        <div style={{width:"100%",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}} >
+
+        <ContainerTitle>
+        <h2  style={{textAlign:"center"}}   >Outros sectores da Chinua Ndembo</h2>
         </ContainerTitle>
-      <Container>
-              <CompanyList/>
-          </Container>
+   
+        <CompanyList/>
+        </div>
+     
+
+          
 
     <Container>
       <div  id="about" className="container">
-        <Services />
+        <Services   />
       </div>
     </Container>
     

@@ -102,7 +102,7 @@ export default function PageCarro() {
     <div className="flex justify-center items-center  flex-col ">
         <h3 className="text-6xl font-medium text-yellow-50">Grandes marcas é na Chinua Ndembo</h3>
         <p className="text-3xl text-yellow-500">Somos lideres em vendas de carros</p>
-    </div>e
+    </div>
 </div>
 </Carousel>
 

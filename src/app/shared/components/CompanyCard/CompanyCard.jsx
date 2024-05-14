@@ -27,7 +27,7 @@ export  function CompanyList() {
       alignItems:"center"
      }}  >
 
-      <CompanyListContent>
+      <CompanyListContent   >
        {listCompany.map(company => (
         <Card key={company.name} name={company.name} image={company.image} path={company.path} />
       ))}

@@ -152,8 +152,8 @@ export default function PageFazenda() {
                 </div>
             </div>
             <Container>
-      <div className="container">
-        <Contacto />
+      <div className="container"  id="contact" >
+        <Contacto  />
       </div>
     </Container>
 

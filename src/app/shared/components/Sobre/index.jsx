@@ -1,11 +1,14 @@
 
 import { Container } from './styles';
 import Logo from "../../../../assets/img/logo_oficial.png"
+import { useRef } from 'react';
 
 
 export const Sobre = () => {
+ // const sobreRef = useRef("about");
+
   return <>
-    <Container id='about'>
+    <Container  ref={sobreRef}  id='about'>
       <div className="top">
         <div className="container">
           <div className="element primario">

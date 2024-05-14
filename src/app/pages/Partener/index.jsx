@@ -21,14 +21,14 @@ export const Partener = () => {
     { name: 'BADM', image: LogoBADM,link:"#" },
     { name: 'B.B.DEV', image: LogoBBDEV,link:"#" },
     { name: 'LATIFA LDA', image: TATIFA,link:"#" },
-    { name: 'Hamilton Kapapelo Construção e Gestão Imobiliária', image: Hamilton,link:"#" },
+    { name: 'Hamilton Kapapelo', image: Hamilton,link:"#" },
 
   ];
 
  
  return <>
 
-  <ContainerListPartner>
+  <ContainerListPartner  id='Parceiro'>
       <div  style={{marginTop:20}}>
       <h2 style={{fontSize:32,color:"#fff",fontWeight:300}} >
  

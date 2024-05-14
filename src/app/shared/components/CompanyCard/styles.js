@@ -34,4 +34,12 @@ export const CompanyListContent = styled.div`
   gap: 20px;
 
   margin: 30px 0px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 `;
