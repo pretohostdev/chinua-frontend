@@ -56,11 +56,20 @@ export const Home = () => {
   ]
 
 
+
   useEffect(()=>{
     buscarTodosCarros();
     buscarTodasAsFazendas();
     buscarTodosImoveis()
     buscarTodasMaquinarias()
+
+   
+    if(window.location.href.includes("/#Parceiro") ){
+      document.querySelector("#Parceiro").scrollIntoView( {behavior: "smooth",
+  block: "end",
+  inline: "nearest"})
+    }
+
 
   },[categoria])
 

@@ -19,6 +19,7 @@ export default function PageFazenda() {
     };
     
     useEffect(() => {
+        scrollTo({top:1})
         buscarTodasAsFazendas()
     }, [quantidadeExibida]);
 

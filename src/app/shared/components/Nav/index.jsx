@@ -1,7 +1,7 @@
 
 // import { Container } from './styles';
 
-import { Link, NavLink, unstable_HistoryRouter } from "react-router-dom";
+import { Link, NavLink, Navigate,useNavigate } from "react-router-dom";
 
 import { Link as LinkA, animateScroll as scroll } from "react-scroll";
 
@@ -22,6 +22,9 @@ import { useRef } from "react";
 export const Nav=(props)=> {
 
 
+  const navigate=useNavigate()
+
+
   return (
     <Container className={props.propClass}>
         <ListItem>
@@ -35,12 +38,12 @@ export const Nav=(props)=> {
         </ListItem> 
         <ListItem>
         <LinkA
-  // activeClass="active"
-  // to="about"
-  // spy={true}
-  // smooth={true}
-  // offset={-70}
-  // duration={500}
+  activeClass="active"
+  to="about"
+  spy={true}
+  smooth={true}
+  offset={-70}
+  duration={500}
 >
   <ListItem>
       <a   href="#about" target="#about"  >Sobre</a>
@@ -48,12 +51,26 @@ export const Nav=(props)=> {
     </LinkA>
         </ListItem> 
         <ListItem>
-            <a   href="#Parceiro" target="#Parceiro"  >Parceiro</a>
+          <LinkA
+          to="Parceiro"
+          activeClass="active"
+          spy={true}
+          >
+            <a   href="#Parceiro" target="#Parceiro"  
+            
+            onClick={(e)=>{
+              e.preventDefault()
+              navigate("/#Parceiro",{relative:"route",preventScrollReset:true,state:{},replace:false})
+              document.querySelector("#Parceiro").scrollIntoView(true,{})
+            }}
+            >Parceiro</a>
+          </LinkA>
         </ListItem> 
         <ListItem>
             <a   href="#contact"   target="#contact"  onClick={(e)=>{
-              e.preventDefault()
-              document.querySelector("#contact").scrollIntoView(true,{})
+                e.preventDefault()
+                document.querySelector("#contact").scrollIntoView(true,{})
+                scroll.scrollToBottom(1,{})
               }}  >Contacto</a>
         </ListItem> 
         <ListItem >
