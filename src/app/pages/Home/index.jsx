@@ -66,8 +66,8 @@ export const Home = () => {
    
     if(window.location.href.includes("/#Parceiro") ){
       document.querySelector("#Parceiro").scrollIntoView( {behavior: "smooth",
-  block: "end",
-  inline: "nearest"})
+  block: "center",
+  inline: "center"})
     }
 
 
