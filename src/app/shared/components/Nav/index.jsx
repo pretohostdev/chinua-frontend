@@ -46,7 +46,11 @@ export const Nav=(props)=> {
   duration={500}
 >
   <ListItem>
-      <a   href="#about" target="#about"  >Sobre</a>
+      <a   href="#about" target="#about" onClick={(e)=>{
+        e.preventDefault()
+        navigate("/#about",{relative:"route",preventScrollReset:true,state:{},replace:false})
+        document.querySelector("#about").scrollIntoView(true,{})
+      }}   >Sobre</a>
   </ListItem>
     </LinkA>
         </ListItem> 

@@ -70,6 +70,11 @@ export const Home = () => {
   inline: "center"})
     }
 
+     if(window.location.href.includes("/#about") ){
+      document.querySelector("#about").scrollIntoView( {behavior: "smooth",
+  block: "center",
+  inline: "center"})
+    }
 
   },[categoria])
 
