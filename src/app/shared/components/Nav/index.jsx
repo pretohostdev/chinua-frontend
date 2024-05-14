@@ -43,19 +43,21 @@ export const Nav=(props)=> {
   // duration={500}
 >
   <ListItem>
-            <a   href="#about" target="#about"  >Sobre</a>
+      <a   href="#about" target="#about"  >Sobre</a>
   </ListItem>
     </LinkA>
         </ListItem> 
-
         <ListItem>
             <a   href="#Parceiro" target="#Parceiro"  >Parceiro</a>
         </ListItem> 
         <ListItem>
-            <a   href="#contact"  target="#contact" >Contacto</a>
+            <a   href="#contact"   target="#contact"  onClick={(e)=>{
+              e.preventDefault()
+              document.querySelector("#contact").scrollIntoView(true,{})
+              }}  >Contacto</a>
         </ListItem> 
         <ListItem >
-            <a href={` https://wa.me/+244923845779`} target="_blank" >+244 923 845 779</a>
+            <a href={` https://wa.me/+244923845779`}    target="_blank" >+244 923 845 779</a>
         </ListItem> 
         
     </Container>
