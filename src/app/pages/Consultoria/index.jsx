@@ -1,3 +1,4 @@
+import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo"
 import Contacto from "../../shared/components/Contacto"
 import { NavBar } from "../../shared/components/NavBar"
 import { Container } from "../Home/styles"
@@ -45,6 +46,7 @@ const Consultoria=()=>{
             </div>
             <Container/>
         </div>
+        <ChinuaNdemboBanerInfo/>
         <Container>
         <div className="container">
         <Contacto />

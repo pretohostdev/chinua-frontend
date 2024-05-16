@@ -23,6 +23,7 @@ import { Team } from "../../shared/components/Team/index.jsx"
 import { NewCardImovel } from "../../shared/components/Card/CardImovel.jsx"
 import { Link } from "react-router-dom"
 import { CardMaquina } from "../../shared/components/Card/CardMaquinas.jsx"
+import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo/index.jsx"
 
 const StyleHome = styled.div`
   width: 100%;
@@ -117,7 +118,8 @@ export const Home = () => {
       <Link to={"/carros"} className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent", border:"1px solid #daa520",  }}  >Automóveis</Link>
       <Link to={"/terras"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500 "  style={{background:"tranparent",border:"1px solid #daa520", }}    >Terrenos </Link>
       <Link to={"/imoveis"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Imoveis </Link>
-      <Link to={"#/"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Maquinarias</Link>
+      <Link to={"/maquinarias"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Maquinarias</Link>
+      <Link to={"#/"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Equipamentos da Padaria</Link>
       <Link to={"/consultoria"}  className="cursor-pointer  px-8  py-2   rounded-lg  text-white  font-semibold  hover:bg-yellow-500"  style={{background:"tranparent",border:"1px solid #daa520", }} >Consultoria Multidisciplinar</Link>
 </div>
         <ContainerFiltro>
@@ -294,7 +296,7 @@ export const Home = () => {
     <Container>
     <Team/>
     </Container>
-
+    <ChinuaNdemboBanerInfo/>
     <Container>
       <div className="container">
         <Contacto />

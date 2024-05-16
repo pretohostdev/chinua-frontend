@@ -6,6 +6,7 @@ import { UserContext } from "../../context/UserContext.jsx";
 import { NewCardImovel } from "../../shared/components/Card/CardImovel.jsx";
 import { Container } from "../Home/styles.js";
 import Contacto from "../../shared/components/Contacto/index.jsx";
+import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo/index.jsx";
 
 const API = import.meta.env.API_LOCAL
 
@@ -154,6 +155,7 @@ export default function PageImovel() {
                 </div>
             </div>
             
+            <ChinuaNdemboBanerInfo/>
             <Container>
       <div className="container">
         <Contacto />

@@ -11,6 +11,7 @@ import { faTaxi, faMapMarkedAlt, faClock } from '@fortawesome/free-solid-svg-ico
 import Contacto from "../../shared/components/Contacto";
 import { NavBar } from "../../shared/components/NavBar";
 import { Logos } from "../../shared/constants/logos";
+import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo";
 
 
 export const Taxi = () => {
@@ -76,6 +77,7 @@ export const Taxi = () => {
                             </Card>
                         </div>
                     </Content>
+                    <ChinuaNdemboBanerInfo/>
                     <ContainerContacto>
                         <Contacto />
                     </ContainerContacto>

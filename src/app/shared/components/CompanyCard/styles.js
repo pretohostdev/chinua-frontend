@@ -32,7 +32,6 @@ export const CompanyListContent = styled.div`
   justify-content:space-between;
   align-items: center;
   gap: 20px;
-
   margin: 30px 0px;
 
   @media (max-width: 768px) {

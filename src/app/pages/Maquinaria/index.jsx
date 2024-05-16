@@ -8,6 +8,7 @@ import { UserContext } from "../../context/UserContext.jsx";
 import { Container } from "../Home/styles.js";
 import Contacto from "../../shared/components/Contacto/index.jsx";
 import { CardMaquina } from "../../shared/components/Card/CardMaquinas.jsx";
+import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo/index.jsx";
 
 const API = import.meta.env.API_LOCAL
 export default function PageMaquinaria() {
@@ -156,7 +157,7 @@ export default function PageMaquinaria() {
 
                 </div>
             </div>
-            
+            <ChinuaNdemboBanerInfo/>
             <Container>
       <div className="container">
         <Contacto />

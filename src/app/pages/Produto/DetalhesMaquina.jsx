@@ -8,6 +8,7 @@ import { NavBar } from "../../shared/components/NavBar";
 import { Container } from "../Home/styles";
 import Contacto from "../../shared/components/Contacto";
 import FormatarMoeda from "../../shared/utils/formatarMoeda";
+import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo";
 
 export default function MaquinaDetails() {
   const [produto,setProduto]=useState({})
@@ -174,7 +175,7 @@ export default function MaquinaDetails() {
     </div> 
  </Container>
     
-
+ <ChinuaNdemboBanerInfo/>
     <Container>
     <div className="container">
         <Contacto />

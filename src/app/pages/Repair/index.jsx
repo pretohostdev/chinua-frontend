@@ -14,6 +14,7 @@ import Contacto from "../../shared/components/Contacto";
 import Modal from './Modal';
 import { NavBar } from '../../shared/components/NavBar';
 import { Logos, Videos } from '../../shared/constants/logos';
+import ChinuaNdemboBanerInfo from '../../shared/components/cardInfo';
 
 
 export const Repair = () => {
@@ -130,6 +131,7 @@ export const Repair = () => {
             </ContainerRepair>
 
           </Content>
+          <ChinuaNdemboBanerInfo/>
           <ContinaerContacto>
             <Contacto />
           </ContinaerContacto>

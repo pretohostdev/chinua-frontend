@@ -10,6 +10,7 @@ import { Gallery } from "./Gallery";
 import Contacto from "../../shared/components/Contacto";
 import { NavBar } from "../../shared/components/NavBar";
 import { Logos } from "../../shared/constants/logos";
+import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo";
 
 
 export const Constroi=()=>{
@@ -99,6 +100,7 @@ export const Constroi=()=>{
         <Gallery projects={projects} />
       
 
+        <ChinuaNdemboBanerInfo/>
       <ContinaerContacto>
       <Contacto/>
       </ContinaerContacto>

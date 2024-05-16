@@ -24,6 +24,7 @@ import ProductDetailsImovel from "../../pages/Produto/DetalhesImovel.jsx";
 import Consultoria from "../../pages/Consultoria/index.jsx";
 import PageMaquinaria from "../../pages/Maquinaria/index.jsx";
 import MaquinaDetails from "../../pages/Produto/DetalhesMaquina.jsx";
+import EquipamentoDaPadaria from "../../pages/DiversosProdutos/index.jsx";
 
 const App = () => {
   return (
@@ -81,6 +82,9 @@ export default function RoutesApp(){
         },{
           path:"/maquinarias",
           element:<PageMaquinaria/>
+        },{
+          path:"/equipamento-padaria",
+          element:<EquipamentoDaPadaria/>
         }
 
       ],

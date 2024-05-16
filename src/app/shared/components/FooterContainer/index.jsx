@@ -8,6 +8,7 @@ import repair from '../../../../assets/img/repair.png'
 import { FaAt, FaCopyright, FaMapMarkedAlt, FaPhoneAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 import dark from '../../styles/theme/dark';
+import { animateScroll } from 'react-scroll';
 
 const Style = styled.div`
     width: 100%;
@@ -269,7 +270,10 @@ function FooterContainer() {
       <div className="container">
         <div className="footer-info">
           <div className='footer-logos'>
+            
+            <Link children onClick={()=>animateScroll.scrollToTop()}>
             <Logo />
+            </Link>
             <Services services={services} />
           </div>
             {/* <Enderecos enderecos={enderecos} /> */}

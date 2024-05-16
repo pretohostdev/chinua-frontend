@@ -15,6 +15,7 @@ import { faWrench, faPaintRoller, faCarCrash } from '@fortawesome/free-solid-svg
 import Contacto from "../../shared/components/Contacto";
 import { NavBar } from '../../shared/components/NavBar';
 import { Logos ,Videos} from '../../shared/constants/logos';
+import ChinuaNdemboBanerInfo from '../../shared/components/cardInfo';
 
 
 const cars = [
@@ -124,6 +125,7 @@ export const AutoParts = () => {
                                 <TeamMember>Carlos</TeamMember>
                             </TeamSection>
                         </div>
+                        <ChinuaNdemboBanerInfo/>
                         <ContinaerContacto>
                             <Contacto />
                         </ContinaerContacto>

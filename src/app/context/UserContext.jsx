@@ -14,6 +14,8 @@ export default function UserContextApp({children}){
     const [fazendas, setFazendas] = useState([])
     const [imoveis, setImoveis] = useState([])
     const [maquinarias, setMaquinarias] = useState([])
+    const [equipamentos,setEquipamentos]=useState([])
+    
 
     const [user, setUser] = useState({});
 
@@ -27,6 +29,13 @@ export default function UserContextApp({children}){
     
 
     
+    async function buscarTodosEquipamentos(){
+        await api.get("/equipamentos-padaria/listar")
+        .then(async (response) => {
+            const equipamentos = await response.data;
+            setEquipamentos(equipamentos);
+        })
+    }
     
     async function buscarTodosCarros() {
         await api.get("/carro/listar")
@@ -166,7 +175,9 @@ export default function UserContextApp({children}){
               registarImovel,
               registarMaquinaria,
               maquinarias,
-              buscarTodasMaquinarias
+              buscarTodasMaquinarias,
+              buscarTodosEquipamentos,
+              equipamentos
               }}>
 
             {children}

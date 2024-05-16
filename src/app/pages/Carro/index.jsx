@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 import { UserContext } from "../../context/UserContext.jsx";
 import { Container } from "../Home/styles.js";
 import Contacto from "../../shared/components/Contacto/index.jsx";
+import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo/index.jsx";
 
 const API = import.meta.env.API_LOCAL
 export default function PageCarro() {
@@ -154,6 +155,7 @@ export default function PageCarro() {
                 </div>
             </div>
             
+            <ChinuaNdemboBanerInfo/>
             <Container>
       <div className="container">
         <Contacto />
