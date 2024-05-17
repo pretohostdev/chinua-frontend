@@ -128,15 +128,15 @@ export default function PageImovel() {
 
                             imoveis.length > 0 && imoveis.slice(0, quantidadeExibida).map((produto, index) => (
                                 <NewCardImovel
-                                    image={`http://127.0.0.1:3000/uploads/imoveis/${produto.image.map(images => images)[0]}`}
+                                    image={produto.image.map(images => images)[0]}
                                     area={produto.area}
                                     localizacao={produto.localizacao}
                                     nomeDoImovel={produto.nomeDoImovel}
                                     preco={produto.preco}
                                     status={produto.status}
                                     tipo={produto.tipo}
-                                    key={produto._id}
-                                    id={produto._id}
+                                    key={produto.id}
+                                    id={produto.id}
                                 />
                             ))
                         }

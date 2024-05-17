@@ -160,6 +160,7 @@ export default function EquipamentoDaPadaria() {
                                     price={produto.price}
                                     status={produto.status}
                                     key={index.toString()}
+                                    
                                 />
                             ))
                         }

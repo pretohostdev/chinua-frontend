@@ -225,14 +225,14 @@ export const Home = () => {
       {
        categoria ==="Automóveis" && listaDeCarro.map((car,index)=>(
           <NewCardCarro
-          image={`https://api-chinua.onrender.com/uploads/carros/${car.image.map(images => images)[0]}`}
+          image={car.image.map(images => images)[0]}
           nomeDoCarro={car.nomeDoCarro}
           price={car.price}
           tipoCombustivel={car.tipoCombustivel}
           tipoDefreio={car.tipoDefreio}
           tipoMotor={car.tipoMotor}
           key={index}
-          id={car._id}
+          id={car.id}
           status={car.status}
           />
         ))
@@ -242,7 +242,7 @@ export const Home = () => {
           <CardMaquina
             estadoDeConversao={maquina.estadoDeConversao}
             id={maquina._id}
-            image={`http://127.0.0.1:3000/uploads/maquinas/${maquina.image.map(images => images)[0]}`}
+            image={maquina.image.map(images => images)[0]}
             nomeDaMaquinaria={maquina.nomeDaMaquinaria}
             price={maquina.price}
             status={maquina.status}

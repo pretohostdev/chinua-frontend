@@ -129,15 +129,15 @@ export default function PageMaquinaria() {
 
                                 maquinarias.slice(0, quantidadeExibida).map((maquina, index) => (
                                 <CardMaquina
-                                    image={`https://api-chinua.onrender.com/uploads/maquinarias/${maquina.image.map(images => images)[0]}`}
+                                    image={maquina.image.map(images => images)[0]}
                                     nomeDaMaquinaria={maquina.nomeDaMaquinaria}
                                     price={maquina.price}
                                     tipoCombustivel={maquina.tipoCombustivel}
                                     tipoDefreio={maquina.tipoDefreio}
                                     tipoMotor={maquina.tipoMotor}
-                                    key={maquina._id}
+                                    key={maquina.id}
                                     status={maquina.status}
-                                    id={maquina._id}
+                                    id={maquina.id}
                                     estadoDeConversao={maquina.estadoDeConversao}
                                     tipoDeMaquinaria={maquina.tipoDeMaquinaria}
                                 />

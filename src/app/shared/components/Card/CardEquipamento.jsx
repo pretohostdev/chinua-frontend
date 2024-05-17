@@ -30,7 +30,7 @@ export const CardEquipamentoPadaria=({
                 <p>{nomeProduto}</p>
               </ContainerNomeDoProduto>
               <ContainerPrice>
-                  <p>Preco: <span>{FormatarMoeda(price,2)}</span></p>
+                  <p>Preço: <span>{FormatarMoeda(price,2)}</span></p>
               </ContainerPrice>
               <ContainerPrice>
                   <p>Estado: <span>{estadoDeConcervacao}</span></p>

@@ -126,7 +126,7 @@ export default function ProductDetailsFazenda() {
         >
             {listaImage && listaImage.map((img, index) => (
                 <div key={index} className="flex items-center justify-center rounded  ">
-                    <img src={`https://api-chinua.onrender.com/uploads/fazendas/${img}`} style={{
+                    <img src={img} style={{
                       width:"100%",
                       borderRadius:8
                       

@@ -128,7 +128,7 @@ export default function PageCarro() {
 
                             listaDeCarro.slice(0, quantidadeExibida).map((carro, index) => (
                                 <NewCardCarro
-                                    image={`https://api-chinua.onrender.com/uploads/carros/${carro.image.map(images => images)[0]}`}
+                                    image={carro.image.map(images => images)[0]}
                                     nomeDoCarro={carro.nomeDoCarro}
                                     price={carro.price}
                                     tipoCombustivel={carro.tipoCombustivel}
@@ -136,7 +136,7 @@ export default function PageCarro() {
                                     tipoMotor={carro.tipoMotor}
                                     key={carro._id}
                                     status={carro.status}
-                                    id={carro._id}
+                                    id={carro.id}
                                 />
                             ))
                         }
