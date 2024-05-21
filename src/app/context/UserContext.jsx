@@ -1,7 +1,8 @@
 import React,{createContext, useState} from 'react';
 import { CookiesProvider, useCookies} from 'react-cookie'
 import api from '../core/api';
-import { useQuery } from 'react-query'
+import { Bounce, ToastContainer, toast } from 'react-toastify';
+
 
 
 
@@ -92,6 +93,18 @@ export default function UserContextApp({children}){
         })
         .then(response => {
             console.log(response.data);
+            toast.success('Carro adicionado com sucesso!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                });
+                
         })
         .catch(error => {
             console.log(error);
@@ -107,10 +120,30 @@ export default function UserContextApp({children}){
         })
         .then(response => {
             console.log(response.data);
-            alert("Maquina regitrada com sucesso!")
+            toast.success('Maquinaria adicionado com sucesso!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                });
         })
         .catch(error => {
-            alert(" Erro ao regitrar a maquinaria")
+            toast.error('Erro ao adicionar !', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress:1,
+                theme: "light",
+                transition: Bounce,
+                });
             console.log(error);
         })
     }
@@ -123,9 +156,30 @@ export default function UserContextApp({children}){
         })
         .then(response => {
             console.log(response.data);
+            toast.success('Fazenda ou Terreno adicionado com sucesso!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                });
         })
         .catch(error => {
-            console.log(error);
+            toast.error('Erro ao adicionar !', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress:1,
+                theme: "light",
+                transition: Bounce,
+                });
         })
     }
 
@@ -137,11 +191,30 @@ export default function UserContextApp({children}){
             },
         })
         .then(response => {
-            console.log(response.data);
+            toast.success('Imovel adicionado com sucesso!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                });
         })
         .catch(error => {
-            console.log(error);
-            console.log(formData)
+            toast.error('Erro ao adicionar !', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress:1,
+                theme: "light",
+                transition: Bounce,
+                });
         })
     }
 
@@ -155,7 +228,17 @@ export default function UserContextApp({children}){
         
        })
        .catch(error => {
-            console.log(error);
+        toast.error('Erro ao fazer login !', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress:1,
+            theme: "light",
+            transition: Bounce,
+            });
        })
 
     }

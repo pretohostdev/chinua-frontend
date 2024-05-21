@@ -38,16 +38,17 @@ export const FormImovel = ()=>{
             });
     
             try {
-                console.log(inputPreco.current.value);
-                console.log(inputLocalizacao.current.value);
-                console.log(inputTipo.current.value);
-                console.log(inputLocalizacao.current.value);
+
                 registarImovel(formData)
-                
-                alert("Imovel adicionado com sucesso");
-                
+                inputArea.current.value="";
+                inputImovel.current.value="";
+                inputPreco.current.value="";
+                inputLocalizacao.current.value="";
+                inputTipo.current.value="";
+                inputLocalizacao.current.value="";
+                inputDescricao.current.value="";
             } catch (error) {
-                alert("Não foi possivel cadastrar a fazenda ou tera")
+                
             }
         }
         const setImage = (files) => {

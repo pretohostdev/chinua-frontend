@@ -5,6 +5,7 @@ import {ContainerLabelInput,
 
 } from "../admin"
 import { UserContext } from "../../../context/UserContext"
+import { Bounce,ToastContainer,toast } from "react-toastify"
 
 
 
@@ -50,6 +51,7 @@ const {registarCarro}=useContext(UserContext)
       console.log(inputTipoMotor.current.value)
       console.log(inputTipoFreio.current.value)
       registarCarro(formData)
+     // toast("Wow so easy !");
     } catch (error) {
       console.log(error)
     }

@@ -48,11 +48,15 @@ const {registarMaquinaria}=useContext(UserContext)
       
       
       try {
-      console.log(inputPrecoMaquina.current.value)
-      console.log(inputTipoCombustivel.current.value)
-      console.log(inputTipoMotor.current.value)
-      console.log(inputTipoFreio.current.value)
+
       registarMaquinaria(formData)
+
+      
+      inputPrecoMaquina.current.value="";
+      inputTipoCombustivel.current.value="";
+      inputTipoMotor.current.value="";
+      inputTipoFreio.current.value="";
+
     } catch (error) {
       console.log(error)
     }

@@ -34,15 +34,17 @@ export const FormFazendaTerreno = ()=>{
         });
 
         try {
-            console.log(inputDimensao.current.value);
-            console.log(inputPreco.current.value);
-            console.log(inputLocalizacao.current.value);
-            console.log(inputTipo.current.value);
-            console.log(inputLocalizacao.current.value);
+
+
             registarFazenda(formData)
 
-            alert("Produto cadastrado com sucesso")
-            
+            inputDimensao.current.value="";
+            inputPreco.current.value="";
+            inputLocalizacao.current.value="";
+            inputTipo.current.value=""
+            inputLocalizacao.current.value=""
+
+
         } catch (error) {
             alert("Não foi possivel cadastrar a fazenda ou tera")
         }
