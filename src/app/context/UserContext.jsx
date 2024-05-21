@@ -1,6 +1,8 @@
 import React,{createContext, useState} from 'react';
 import { CookiesProvider, useCookies} from 'react-cookie'
 import api from '../core/api';
+import { useQuery } from 'react-query'
+
 
 
 
@@ -30,6 +32,7 @@ export default function UserContextApp({children}){
 
     
     async function buscarTodosEquipamentos(){
+
         await api.get("/equipamento/listar")
         .then(async (response) => {
             const equipamentos = await response.data;

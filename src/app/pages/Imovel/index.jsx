@@ -1,28 +1,41 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { NavBar } from "../../shared/components/NavBar/index.jsx";
 
 import Carousel from "react-multi-carousel";
-import { UserContext } from "../../context/UserContext.jsx";
+
 import { NewCardImovel } from "../../shared/components/Card/CardImovel.jsx";
 import { Container } from "../Home/styles.js";
 import Contacto from "../../shared/components/Contacto/index.jsx";
 import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo/index.jsx";
+import { useQuery } from "react-query";
+import Spinner from "../../shared/components/spiner/index.jsx";
+import api from "../../core/api/index.js";
 
 const API = import.meta.env.API_LOCAL
 
 
 export default function PageImovel() {
-    const { buscarTodosImoveis, imoveis } = useContext(UserContext)
     const [quantidadeExibida, setQuantidadeExibida] = useState(10);
 
 
+    const { data, error, isLoading } = useQuery("reposImoveis", async () => {
+        return await api.get("/imovel/listar").then((response) => response.data)
+    },
+        {
+            retry: 5,
+            refetchInterval: 5000,
+            refetchOnWindowFocus: true,
+            refetchOnReconnect: true
+        }
+    )
     const handleLimitChange = (quantidade) => {
         setQuantidadeExibida(quantidade);
     };
 
     useEffect(() => {
-        buscarTodosImoveis()
+        scrollTo({ top: 1 })
     }, [quantidadeExibida]);
+
 
     return (
 
@@ -111,7 +124,7 @@ export default function PageImovel() {
                     <div className="flex   gap-3 items-center justify-end  flex-row  mt-4 px-2">
                         <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white  font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(5)}>Exibir 5 Imoveis</button>
                         <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white  font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(10)}>Exibir 10 Imoveis</button>
-                        <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(imoveis.length)}>Todos os Imoveis</button>
+                        <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(data?.length)}>Todos os Imoveis</button>
 
                     </div>
 
@@ -126,7 +139,7 @@ export default function PageImovel() {
 
                         {
 
-                            imoveis.length > 0 && imoveis.slice(0, quantidadeExibida).map((produto, index) => (
+                            data?.slice(0, quantidadeExibida).map((produto, index) => (
                                 <NewCardImovel
                                     image={produto.image.map(images => images)[0]}
                                     area={produto.area}
@@ -143,8 +156,15 @@ export default function PageImovel() {
 
 
                         {
-                            imoveis.length === 0 && (
-                                <div className="w-full h-screen  bg-slate-400 mt-8 rounded  mx-5  flex  justify-center items-center"   >
+                            isLoading &&(
+                                <div className="w-full h-screen  bg-yellow-500 mt-8 rounded  mx-5  flex  justify-center items-center"   >
+                                <Spinner/>
+                            </div>
+                            )
+                        }
+                        {
+                            data?.length === 0 && (
+                                <div className="w-full h-screen  bg-yellow-500 mt-8 rounded  mx-5  flex  justify-center items-center"   >
                                     <h3 className="text-white  font-bold  text-4xl " >Por enquanto não existe nenhum imovel resgistrado</h3>
                                 </div>
                             )

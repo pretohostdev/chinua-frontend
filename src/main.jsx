@@ -6,10 +6,19 @@ import "react-multi-carousel/lib/styles.css";
 
 import "./index.css"
 import UserContextApp from './app/context/UserContext';
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+
     <UserContextApp>
-    <RoutesApp/>
+      <QueryClientProvider client={queryClient} >
+        <RoutesApp />
+
+      </QueryClientProvider>
     </UserContextApp>
   </React.StrictMode>,
 )

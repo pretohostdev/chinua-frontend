@@ -2,26 +2,39 @@ import api from "../../core/api/index.js";
 import { useState, useEffect, useContext } from "react";
 import { NewCardCarro } from "../../shared/components/Card/Card.jsx";
 import { NavBar } from "../../shared/components/NavBar/index.jsx";
-
+import { useQuery } from 'react-query'
 import Carousel from "react-multi-carousel";
 import { UserContext } from "../../context/UserContext.jsx";
 import { Container } from "../Home/styles.js";
 import Contacto from "../../shared/components/Contacto/index.jsx";
 import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo/index.jsx";
+import Spinner from "../../shared/components/spiner/index.jsx";
 
 const API = import.meta.env.API_LOCAL
 export default function PageCarro() {
+
+
     const{listaDeCarro,buscarTodosCarros}=useContext(UserContext)
     const [quantidadeExibida, setQuantidadeExibida] = useState(10);
-
-
+    
+    
     const handleLimitChange = (quantidade) => {
         setQuantidadeExibida(quantidade);
     };
     
-    useEffect(() => {
-        buscarTodosCarros()
-    }, [quantidadeExibida]);
+   
+    
+    const {data,error,isLoading}=   useQuery("reposCarros",async ()=>{
+      return await api.get("/carro/listar").then((response)=>response.data)
+    },
+    {
+      retry: 5,
+      refetchInterval: 5000,
+      refetchOnWindowFocus: true,
+      refetchOnReconnect: true
+  }
+    )
+
 
     return (
 
@@ -111,7 +124,7 @@ export default function PageCarro() {
                     <div className="flex   gap-3 items-center justify-end  flex-row  mt-4 px-2">
                         <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(5)}>Exibir 5 carros</button>
                         <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(10)}>Exibir 10 carros</button>
-                        <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(listaDeCarro.length)}>Todos os carros</button>
+                        <button className="bg-yellow-500 hover:border-[1px] hover:bg-yellow-800  text-white font-bold py-2 px-4 rounded" onClick={() => handleLimitChange(data.length)}>Todos os carros</button>
 
                     </div>
 
@@ -124,9 +137,7 @@ export default function PageCarro() {
                         alignContent: "center"
                     }}>
 
-                        {
-
-                            listaDeCarro.slice(0, quantidadeExibida).map((carro, index) => (
+                        { data?.slice(0, quantidadeExibida).map((carro, index) => (
                                 <NewCardCarro
                                     image={carro.image.map(images => images)[0]}
                                     nomeDoCarro={carro.nomeDoCarro}
@@ -143,9 +154,9 @@ export default function PageCarro() {
 
 
                         {
-                            listaDeCarro.length === 0 && (
-                                <div className="w-full h-screen  bg-slate-400 mt-8 rounded  mx-5  flex  justify-center items-center"   >
-                                    <h3 className="text-white  font-bold  text-4xl " >Por enquanto não existe nenhum fazenda ou terreno resgistrado</h3>
+                            isLoading && (
+                                <div className="w-full h-screen  bg-yellow-600 mt-8 rounded  mx-5  flex  justify-center items-center"   >
+                                   <Spinner/>
                                 </div>
                             )
                         }
