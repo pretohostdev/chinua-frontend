@@ -18,12 +18,14 @@ import {
 import { FormCarro } from "./components/FormCarro.jsx";
 import { FormFazendaTerreno } from "./components/FormFazendaTerreno.jsx";
 import { FormImovel } from "./components/FormImovel.jsx";
+
 import { UserContext } from "../../context/UserContext.jsx";
 import { Navigate, useNavigate } from "react-router-dom";
 import { FormAtualizarCarro  } from "./FormsAtualizar/Carro.jsx";
 import { FormAtualizarFazenda } from "./FormsAtualizar/Fazenda.jsx";
 import { FormAtualizarImovel } from "./FormsAtualizar/Imovel.jsx";
 import {FormAtualizarMaquinaria} from "./FormsAtualizar/Maquinaria.jsx"
+import { FormMaquinaria } from "./components/FormMaquinaria.jsx";
 
 export default function Admin() {
 

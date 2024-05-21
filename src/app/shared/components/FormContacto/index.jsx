@@ -16,6 +16,17 @@ function FormContacto() {
     const [message, setMessage] = useState('')
   
 
+    const Mailto = ({ email, subject = '', body = '', children }) => {
+        let params = subject || body ? '?' : '';
+        if (subject) params += `subject=${encodeURIComponent(subject)}`;
+        if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
+      
+        return <a href={`mailto:${email}${params}`}>{children}</a>;
+      };
+      
+      
+      
+      
     const sendMessage= async (evt)=>{
         evt.preventDefault()
 
@@ -53,6 +64,9 @@ function FormContacto() {
             <div className="form-input">
                 <Button theme='secondary' type='submit'>Enviar</Button>
                 <Button theme='primary' type='reset' >Cancelar</Button>
+                <Mailto email="franciscojoaopedro1998@gmail.com" subject="Hello & Welcome" body="Hello world!">
+          Mail me!
+        </Mailto>
             </div>
         </Container>
     );
