@@ -55,7 +55,7 @@ export const CardEquipamentoPadaria=({
                  </div> */}
               </ContainerDiscription>
 
-              <ConatinerButton   to={`/produto/maquina/${id}`}>
+              <ConatinerButton   to={`/produto/equipamento/${id}`}>
                     Ver mais
               </ConatinerButton>
         </ConatinerCardProduto>

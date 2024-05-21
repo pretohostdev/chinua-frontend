@@ -151,7 +151,7 @@ export default function EquipamentoDaPadaria() {
 
                         {
 
-                            produtos.slice(0, quantidadeExibida).map((produto, index) => (
+                                equipamentos.slice(0, quantidadeExibida).map((produto, index) => (
                                 <CardEquipamentoPadaria
                                     image={`${produto.image.map(images => images)[0]}`}
                                     estadoDeConcervacao={produto.estadoDeConcervacao}
@@ -166,7 +166,7 @@ export default function EquipamentoDaPadaria() {
                         }
 
                                 {
-                            produtos.length === 0 && (
+                            equipamentos.length === 0 && (
                                 <div className="w-full h-screen  bg-slate-400 mt-8 rounded  mx-5  flex  justify-center items-center"   >
                                     <h3 className="text-white  font-bold  text-4xl " >Por enquanto não existe nenhum fazenda ou terreno resgistrado</h3>
                                 </div>

@@ -10,17 +10,17 @@ import Contacto from "../../shared/components/Contacto";
 import FormatarMoeda from "../../shared/utils/formatarMoeda";
 import ChinuaNdemboBanerInfo from "../../shared/components/cardInfo";
 
-export default function ProductDetailsImovel() {
+export default function EquipamentoDetalhes() {
   const [imovel,setImovel]=useState({})
   const [listaImage,setListaImage]=useState([])
   const {IDproduto}=useParams()
 
   async function buscarProduto(IDproduto){
-    await api.get(`/imovel/listar/${IDproduto}`)
+    await api.get(`/equipamento/listar/${IDproduto}`)
     .then(async (response)=>{
         const imovel= await response.data
         const images= await imovel.image.map(img=>img)
-        setImovel(()=>imovel)
+        setImovel(imovel)
         setListaImage(()=>images)
       })
       
@@ -34,11 +34,9 @@ export default function ProductDetailsImovel() {
   },[])
 
   const message=`
-  Olá, estou interessado em *comprar/alugar* um Imovel da Chinua, 
-  especificamente  tipo *${imovel.tipo}*    com  nome: *${imovel.nomeDoImovel}* com referência: *${IDproduto}*.
+  Olá, estou interessado em *comprar/alugar* um Equipamento da Chinua, 
+  com  nome: *${imovel.nomeProduto}* com referência: *${IDproduto}*.
   Gostaria de saber mais detalhes sobre disponibilidade e condições.Agradeço desde já pela atenção.
-  
-
 
   *Link*:http://localhost:5173/produto/detalhes/${IDproduto}
   `
@@ -60,8 +58,8 @@ export default function ProductDetailsImovel() {
         paddingRight:14,
         gap:10,
 
-        marginBottom:20
-
+        marginBottom:20,
+    
         
       }}
      
@@ -135,11 +133,12 @@ export default function ProductDetailsImovel() {
         </Carousel>
         </div>
         <ContainerParteDeBaixo>
+                   
                     <div>
-                        <p>Tipo:<span>{imovel.tipo}</span></p>
+                        <p>Preço: <span>{FormatarMoeda(imovel.price,2,"AOA")}</span></p>
                     </div>
                     <div>
-                        <p>Preço: <span>{FormatarMoeda(imovel.preco,2,"AOA")}</span></p>
+                        <p>Descrição:<span>{imovel.descricao}</span></p>
                     </div>
         </ContainerParteDeBaixo>
       </div>
@@ -154,14 +153,10 @@ export default function ProductDetailsImovel() {
 
       }}>
           <ContainerTipoPecas>
-          <p>Nome: <span>{imovel.nomeDoImovel}</span> </p>
+          <p>Nome: <span>{imovel.nomeProduto}</span> </p>
         </ContainerTipoPecas>
         <ContainerTipoPecas>
-          <p>Localização: <span>{imovel.localizacao}</span> </p>
-        </ContainerTipoPecas>
-
-        <ContainerTipoPecas>
-          <p>Area: <span>{imovel.area}</span> </p>
+          <p>Estado: <span>{imovel.estadoDeConcervacao}</span> </p>
         </ContainerTipoPecas>
         <ContainerTipoPecas>
           <p>Estado: <span>{imovel.status}</span> </p>

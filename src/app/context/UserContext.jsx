@@ -30,7 +30,7 @@ export default function UserContextApp({children}){
 
     
     async function buscarTodosEquipamentos(){
-        await api.get("/equipamentos-padaria/listar")
+        await api.get("/equipamento/listar")
         .then(async (response) => {
             const equipamentos = await response.data;
             setEquipamentos(equipamentos);

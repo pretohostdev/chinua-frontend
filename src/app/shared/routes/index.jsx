@@ -25,6 +25,7 @@ import Consultoria from "../../pages/Consultoria/index.jsx";
 import PageMaquinaria from "../../pages/Maquinaria/index.jsx";
 import MaquinaDetails from "../../pages/Produto/DetalhesMaquina.jsx";
 import EquipamentoDaPadaria from "../../pages/DiversosProdutos/index.jsx";
+import EquipamentoDetalhes from "../../pages/Produto/DetalhesEquipamento.jsx";
 
 const App = () => {
   return (
@@ -131,6 +132,9 @@ export default function RoutesApp(){
         },{
           path:"maquina/:IDproduto",
           element:<MaquinaDetails/>
+        },{
+          path:"equipamento/:IDproduto",
+          element:<EquipamentoDetalhes/>
         }
         
       ]
